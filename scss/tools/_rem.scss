@@ -1,0 +1,18 @@
+// =============================================================================
+// PIXEL INPUT / RELATIVE OUTPUT
+// =============================================================================
+@use "sass:math";
+
+// A 16px design baseline, not a forced browser root size.
+// Accept unitless pixels or px; rem output follows the reader's root font size.
+@function rem($px) {
+  @if math.is-unitless($px) {
+    @return math.div($px, 16) * 1rem;
+  }
+
+  @if math.unit($px) != "px" {
+    @error "rem() expects a unitless pixel value or a px measurement.";
+  }
+
+  @return math.div($px, 16px) * 1rem;
+}

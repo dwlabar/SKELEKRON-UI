@@ -1,0 +1,25 @@
+// =============================================================================
+// CONTAINER
+// =============================================================================
+@use "../settings" as t;
+@use "../tools/breakpoint" as *;
+
+.skel-container {
+  inline-size: 100%;
+  max-inline-size: var(--skel-container-max, #{t.$container-max});
+  margin-inline: auto;
+  padding-inline: t.$container-padding;
+
+  @include breakpoint(large) {
+    padding-inline: t.$container-padding-large;
+  }
+}
+
+// --- Modifiers --------------------------------------------------------------
+.skel-container--narrow {
+  --skel-container-max: #{t.$container-narrow};
+}
+
+.skel-container--fluid {
+  --skel-container-max: none;
+}

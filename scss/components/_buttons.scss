@@ -1,0 +1,78 @@
+// =============================================================================
+// BUTTONS
+// =============================================================================
+@use "../settings" as t;
+@use "../tools/rem" as *;
+
+.skel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: rem(44);
+  max-inline-size: 100%;
+  padding: t.$space-2 t.$space-4;
+  border: 1px solid t.$color-border;
+  border-radius: t.$button-radius;
+  color: t.$color-text;
+  background: t.$color-background;
+  font-family: t.$font-family;
+  font-size: t.$font-size;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    color: t.$color-text;
+    background: t.$color-surface;
+  }
+
+  &:focus-visible {
+    outline: 3px solid t.$color-focus;
+    outline-offset: 3px;
+  }
+}
+
+// --- Primary modifier -------------------------------------------------------
+.skel-button--primary {
+  border-color: t.$color-primary;
+  color: t.$color-on-accent;
+  background: t.$color-primary;
+
+  &:hover:not(:disabled) {
+    color: t.$color-on-accent;
+    background: t.$color-primary-hover;
+  }
+}
+
+// --- Secondary modifier -----------------------------------------------------
+.skel-button--secondary {
+  border-color: t.$color-secondary;
+  color: t.$color-on-accent;
+  background: t.$color-secondary;
+
+  &:hover:not(:disabled) {
+    color: t.$color-on-accent;
+    background: t.$color-secondary-hover;
+  }
+}
+
+// --- Outline modifier -------------------------------------------------------
+.skel-button--outline {
+  border-color: t.$color-primary;
+  color: t.$color-primary;
+  background: transparent;
+
+  &:hover:not(:disabled) {
+    color: t.$color-on-accent;
+    background: t.$color-primary;
+  }
+}
+
+// --- Disabled state ---------------------------------------------------------
+.skel-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

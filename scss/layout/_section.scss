@@ -1,0 +1,13 @@
+// =============================================================================
+// SECTION
+// =============================================================================
+@use "../settings" as t;
+@use "../tools/breakpoint" as *;
+
+.skel-section {
+  padding-block: t.$section-space;
+
+  @include breakpoint(medium) {
+    padding-block: t.$section-space-large;
+  }
+}

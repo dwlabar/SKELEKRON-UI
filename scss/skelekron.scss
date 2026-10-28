@@ -1,0 +1,22 @@
+// =============================================================================
+// SKELEKRON / MASTER CONTROL
+// =============================================================================
+
+// --- Configuration and tools ------------------------------------------------
+// Forward settings first so consumers can configure this entry with @use ... with.
+@forward "settings";
+@forward "tools/rem";
+@forward "tools/breakpoint";
+
+// --- Base -------------------------------------------------------------------
+@use "base/base";
+@use "base/typography";
+
+// --- Layout -----------------------------------------------------------------
+@use "layout/container";
+@use "layout/section";
+@use "layout/grid";
+
+// --- Components -------------------------------------------------------------
+// Comment out optional modules here to build only what you need.
+@use "components/buttons";

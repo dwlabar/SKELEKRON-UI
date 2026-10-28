@@ -1,0 +1,55 @@
+// =============================================================================
+// SETTINGS / CONTROL PANEL
+// =============================================================================
+@use "tools/rem" as *;
+
+// Configure with @use "settings" with (...) before loading other modules.
+// --- Palette ----------------------------------------------------------------
+
+$color-text: #202a35 !default;
+$color-background: #ffffff !default;
+$color-surface: #eef1f4 !default;
+$color-border: #667483 !default;
+$color-primary: #2452a1 !default;
+$color-primary-hover: #193c79 !default;
+$color-secondary: #344454 !default;
+$color-secondary-hover: #202e3c !default;
+$color-on-accent: #ffffff !default;
+$color-focus: #9b3900 !default;
+
+// --- Typography -------------------------------------------------------------
+$font-family: (system-ui, -apple-system, "Segoe UI", sans-serif) !default;
+$font-size: rem(16) !default;
+$line-height: 1.6 !default;
+$heading-line-height: 1.2 !default;
+$heading-sizes: (1: rem(40), 2: rem(32), 3: rem(24), 4: rem(20), 5: rem(18), 6: rem(16)) !default;
+
+// --- Spacing ----------------------------------------------------------------
+$space-1: rem(4) !default;
+$space-2: rem(8) !default;
+$space-3: rem(16) !default;
+$space-4: rem(24) !default;
+$space-5: rem(32) !default;
+$space-6: rem(48) !default;
+
+// --- Breakpoints ------------------------------------------------------------
+$breakpoint-medium: rem(768) !default;
+$breakpoint-large: rem(1152) !default;
+$breakpoints: (
+  medium: $breakpoint-medium,
+  large: $breakpoint-large
+) !default;
+
+// --- Layout -----------------------------------------------------------------
+$container-max: rem(1152) !default;
+$container-narrow: rem(704) !default;
+$container-padding: $space-3 !default;
+$container-padding-large: $space-5 !default;
+$section-space: $space-5 !default;
+$section-space-large: $space-6 !default;
+$grid-columns: 3 !default;
+$grid-gap: $space-3 !default;
+$grid-gap-large: $space-4 !default;
+
+// --- Buttons ----------------------------------------------------------------
+$button-radius: rem(4) !default;

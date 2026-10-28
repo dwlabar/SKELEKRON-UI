@@ -1,0 +1,177 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #202a35;
+  background: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 3px solid #9b3900;
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  margin-block: 0 1rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+:where(h1) {
+  font-size: 2.5rem;
+}
+
+:where(h2) {
+  font-size: 2rem;
+}
+
+:where(h3) {
+  font-size: 1.5rem;
+}
+
+:where(h4) {
+  font-size: 1.25rem;
+}
+
+:where(h5) {
+  font-size: 1.125rem;
+}
+
+:where(h6) {
+  font-size: 1rem;
+}
+
+:where(p) {
+  margin-block: 0 1rem;
+  overflow-wrap: anywhere;
+}
+
+:where(a) {
+  color: #2452a1;
+  text-underline-offset: 0.2em;
+}
+
+:where(a:hover) {
+  color: #193c79;
+}
+
+.skel-container {
+  inline-size: 100%;
+  max-inline-size: var(--skel-container-max, 72rem);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 72rem) {
+  .skel-container {
+    padding-inline: 2rem;
+  }
+}
+
+.skel-container--narrow {
+  --skel-container-max: 44rem;
+}
+
+.skel-container--fluid {
+  --skel-container-max: none;
+}
+
+.skel-section {
+  padding-block: 2rem;
+}
+@media (min-width: 48rem) {
+  .skel-section {
+    padding-block: 3rem;
+  }
+}
+
+.skel-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--skel-grid-gap, 1rem);
+}
+.skel-grid > * {
+  min-inline-size: 0;
+}
+@media (min-width: 48rem) {
+  .skel-grid {
+    grid-template-columns: repeat(var(--skel-grid-columns, 3), minmax(0, 1fr));
+    gap: var(--skel-grid-gap, 1.5rem);
+  }
+}
+
+.skel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 2.75rem;
+  max-inline-size: 100%;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #667483;
+  border-radius: 0.25rem;
+  color: #202a35;
+  background: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.skel-button:hover:not(:disabled) {
+  color: #202a35;
+  background: #eef1f4;
+}
+.skel-button:focus-visible {
+  outline: 3px solid #9b3900;
+  outline-offset: 3px;
+}
+
+.skel-button--primary {
+  border-color: #2452a1;
+  color: #ffffff;
+  background: #2452a1;
+}
+.skel-button--primary:hover:not(:disabled) {
+  color: #ffffff;
+  background: #193c79;
+}
+
+.skel-button--secondary {
+  border-color: #344454;
+  color: #ffffff;
+  background: #344454;
+}
+.skel-button--secondary:hover:not(:disabled) {
+  color: #ffffff;
+  background: #202e3c;
+}
+
+.skel-button--outline {
+  border-color: #2452a1;
+  color: #2452a1;
+  background: transparent;
+}
+.skel-button--outline:hover:not(:disabled) {
+  color: #ffffff;
+  background: #2452a1;
+}
+
+.skel-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

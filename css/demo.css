@@ -1,0 +1,81 @@
+.demo-header,
+.demo-footer {
+  background: #eef1f4;
+}
+
+.demo-nav,
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.demo-nav {
+  margin-block-end: 2rem;
+}
+
+.demo-actions {
+  margin-block-end: 1rem;
+}
+
+.demo-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.demo-section + .demo-section {
+  border-block-start: 1px solid #667483;
+}
+
+.demo-grid {
+  margin-block-end: 1.5rem;
+}
+
+.demo-cell,
+.demo-container-example {
+  padding-block: 1rem;
+  border: 1px solid #667483;
+  background: #eef1f4;
+}
+
+.demo-cell {
+  padding-inline: 1rem;
+}
+
+.demo-container-example {
+  margin-block-end: 1rem;
+}
+
+.demo-image {
+  margin: 0;
+  max-inline-size: 40rem;
+}
+
+.demo-image figcaption {
+  margin-block-start: 0.5rem;
+}
+
+.demo-type-sample {
+  margin-block-end: 1.5rem;
+}
+
+.demo-type-sample > * {
+  display: block;
+}
+
+.demo-skip {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: 1rem;
+  padding: 0.5rem 1rem;
+  color: #202a35;
+  background: #ffffff;
+}
+.demo-skip:not(:focus) {
+  clip-path: inset(50%);
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}

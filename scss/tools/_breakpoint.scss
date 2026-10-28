@@ -1,0 +1,15 @@
+// =============================================================================
+// RESPONSIVE SWITCHBOARD
+// =============================================================================
+@use "sass:map";
+@use "../settings";
+
+@mixin breakpoint($name) {
+  @if not map.has-key(settings.$breakpoints, $name) {
+    @error "Unknown breakpoint: #{$name}. Configure it in $breakpoints.";
+  }
+
+  @media (min-width: map.get(settings.$breakpoints, $name)) {
+    @content;
+  }
+}

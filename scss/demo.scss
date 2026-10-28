@@ -1,0 +1,94 @@
+// =============================================================================
+// DEMO / DISPLAY PANEL
+// =============================================================================
+// Presentation for index.html only; never required by the toolkit.
+@use "settings" as t;
+@use "tools/rem" as *;
+
+.demo-header,
+.demo-footer {
+  background: t.$color-surface;
+}
+
+// --- Navigation and actions -------------------------------------------------
+.demo-nav,
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: t.$space-3;
+}
+
+.demo-nav {
+  margin-block-end: t.$space-5;
+}
+
+.demo-actions {
+  margin-block-end: t.$space-3;
+}
+
+// --- Labels and sections ----------------------------------------------------
+.demo-label {
+  font-size: rem(14);
+  font-weight: 600;
+}
+
+.demo-section + .demo-section {
+  border-block-start: 1px solid t.$color-border;
+}
+
+// --- Layout samples ---------------------------------------------------------
+.demo-grid {
+  margin-block-end: t.$space-4;
+}
+
+.demo-cell,
+.demo-container-example {
+  padding-block: t.$space-3;
+  border: 1px solid t.$color-border;
+  background: t.$color-surface;
+}
+
+.demo-cell {
+  padding-inline: t.$space-3;
+}
+
+.demo-container-example {
+  margin-block-end: t.$space-3;
+}
+
+// --- Image and type samples -------------------------------------------------
+.demo-image {
+  margin: 0;
+  max-inline-size: rem(640);
+}
+
+.demo-image figcaption {
+  margin-block-start: t.$space-2;
+}
+
+.demo-type-sample {
+  margin-block-end: t.$space-4;
+}
+
+.demo-type-sample > * {
+  display: block;
+}
+
+// --- Keyboard skip link -----------------------------------------------------
+.demo-skip {
+  position: absolute;
+  inset-inline-start: t.$space-3;
+  inset-block-start: t.$space-3;
+  padding: t.$space-2 t.$space-3;
+  color: t.$color-text;
+  background: t.$color-background;
+
+  &:not(:focus) {
+    clip-path: inset(50%);
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

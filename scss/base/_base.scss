@@ -1,0 +1,31 @@
+// =============================================================================
+// BASE / SYSTEM DEFAULTS
+// =============================================================================
+@use "../settings" as t;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Leave the html font size untouched so browser preferences remain effective.
+body {
+  margin: 0;
+  color: t.$color-text;
+  background: t.$color-background;
+  font-family: t.$font-family;
+  font-size: t.$font-size;
+  line-height: t.$line-height;
+}
+
+:focus-visible {
+  outline: 3px solid t.$color-focus;
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}

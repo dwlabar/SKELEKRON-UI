@@ -1,0 +1,32 @@
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+@use "../settings" as t;
+
+:where(h1, h2, h3, h4, h5, h6) {
+  margin-block: 0 t.$space-3;
+  line-height: t.$heading-line-height;
+  overflow-wrap: anywhere;
+}
+
+@each $level, $size in t.$heading-sizes {
+  :where(h#{$level}) {
+    font-size: $size;
+  }
+}
+
+// --- Paragraphs -------------------------------------------------------------
+:where(p) {
+  margin-block: 0 t.$space-3;
+  overflow-wrap: anywhere;
+}
+
+// --- Links ------------------------------------------------------------------
+:where(a) {
+  color: t.$color-primary;
+  text-underline-offset: 0.2em;
+}
+
+:where(a:hover) {
+  color: t.$color-primary-hover;
+}

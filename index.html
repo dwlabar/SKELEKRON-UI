@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SKELEKRON UI: a minimal HTML, CSS, and Sass foundation demo.">
+    <title>SKELEKRON UI — Foundation 0.1.0</title>
+    <link rel="stylesheet" href="css/skelekron.css">
+    <link rel="stylesheet" href="css/demo.css">
+  </head>
+  <body>
+    <a class="demo-skip" href="#main">Skip to content</a>
+    <header class="skel-section demo-header" id="top">
+      <div class="skel-container">
+        <nav class="demo-nav" aria-label="Demo sections">
+          <a href="#typography">Typography</a>
+          <a href="#layout">Layout</a>
+          <a href="#grid">Grid</a>
+          <a href="#buttons">Buttons</a>
+          <a href="#images">Images</a>
+        </nav>
+        <p class="demo-label">SKELEKRON / Foundation / 0.1.0</p>
+        <h1>SKELEKRON UI</h1>
+        <p>A small starting point: readable type, responsive layout, and everyday buttons.</p>
+        <a class="skel-button skel-button--primary" href="#get-started">Get started</a>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="skel-section demo-section" id="typography" aria-labelledby="typography-title">
+        <div class="skel-container">
+          <p class="demo-label">01 / Typography</p>
+          <h2 id="typography-title">A practical type scale</h2>
+          <p>System fonts, relative sizing, and comfortable line spacing. This paragraph includes
+            <strong>strong text</strong>, <em>emphasis</em>, and an <a href="#buttons">underlined link</a>.</p>
+          <div class="demo-type-sample">
+            <h3>Heading 3 — A section within a section</h3>
+            <h4>Heading 4 — Supporting details</h4>
+            <h5>Heading 5 — A smaller group</h5>
+            <h6>Heading 6 — The finest level</h6>
+          </div>
+          <p>The page title demonstrates heading 1; each main section demonstrates heading 2.
+            Use Tab to inspect visible keyboard focus on links and buttons.</p>
+        </div>
+      </section>
+
+      <section class="skel-section demo-section" id="layout" aria-labelledby="layout-title">
+        <div class="skel-container">
+          <p class="demo-label">02 / Containers &amp; sections</p>
+          <h2 id="layout-title">Room for your content</h2>
+          <p>Containers center content with responsive side padding. Section spacing increases at 48rem.</p>
+        </div>
+        <div class="skel-container demo-container-example">Default container — maximum 72rem</div>
+        <div class="skel-container skel-container--narrow demo-container-example">Narrow container — maximum 44rem</div>
+        <div class="skel-container skel-container--fluid demo-container-example">Fluid container — full width with side padding</div>
+      </section>
+
+      <section class="skel-section demo-section" id="grid" aria-labelledby="grid-title">
+        <div class="skel-container">
+          <p class="demo-label">03 / Native CSS Grid</p>
+          <h2 id="grid-title">Columns without calculations</h2>
+          <p>The default grid has three equal columns from 48rem, with a responsive gutter.
+            All examples stack into one column below that breakpoint.</p>
+          <div class="skel-grid demo-grid" aria-label="Default three-column grid">
+            <div class="demo-cell">One</div>
+            <div class="demo-cell">Two</div>
+            <div class="demo-cell">Three</div>
+          </div>
+          <h3>Two columns, wider gutters</h3>
+          <p>Set <code>--skel-grid-columns: 2</code> and <code>--skel-grid-gap: 2rem</code> on this grid.</p>
+          <div class="skel-grid demo-grid" style="--skel-grid-columns: 2; --skel-grid-gap: 2rem;" aria-label="Custom two-column grid">
+            <div class="demo-cell">First column</div>
+            <div class="demo-cell">Second column</div>
+          </div>
+          <h3>Four columns, no gutter</h3>
+          <div class="skel-grid" style="--skel-grid-columns: 4; --skel-grid-gap: 0;" aria-label="Four-column grid without gutters">
+            <div class="demo-cell">One</div>
+            <div class="demo-cell">Two</div>
+            <div class="demo-cell">Three</div>
+            <div class="demo-cell">Four</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skel-section demo-section" id="buttons" aria-labelledby="buttons-title">
+        <div class="skel-container">
+          <p class="demo-label">04 / Buttons</p>
+          <h2 id="buttons-title">Clear, accessible actions</h2>
+          <p>These links navigate to the next section. The primary link in the header is a call to action.</p>
+          <div class="demo-actions">
+            <a class="skel-button" href="#images">Base</a>
+            <a class="skel-button skel-button--primary" href="#images">Primary</a>
+            <a class="skel-button skel-button--secondary" href="#images">Secondary</a>
+            <a class="skel-button skel-button--outline" href="#images">Outline</a>
+            <button class="skel-button" type="button" disabled>Unavailable</button>
+          </div>
+          <p>A native submit button works without JavaScript:</p>
+          <form action="#get-started" method="get">
+            <button class="skel-button skel-button--primary" type="submit">Continue to setup</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="skel-section demo-section" id="images" aria-labelledby="images-title">
+        <div class="skel-container">
+          <p class="demo-label">05 / Responsive images</p>
+          <h2 id="images-title">Fit the space, keep the ratio</h2>
+          <figure class="demo-image">
+            <img src="assets/layout-study.svg" alt="Layout study with one wide header above three equal columns." width="960" height="480" loading="lazy">
+            <figcaption>A local 960 × 480 SVG scales down within its container without distortion.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="skel-section demo-section" id="get-started" aria-labelledby="setup-title">
+        <div class="skel-container skel-container--narrow">
+          <p class="demo-label">06 / Get started</p>
+          <h2 id="setup-title">Use only what you need</h2>
+          <p>Link <code>css/skelekron.css</code> from your HTML. To customize the foundation,
+            configure the Sass settings, then run <code>npm run build</code>.</p>
+          <p>Colors, type, spacing, breakpoints, container sizes, and grid defaults live in <code>scss/_settings.scss</code>.</p>
+          <a class="skel-button skel-button--outline" href="README.md">Read the setup guide</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="skel-section demo-footer">
+      <div class="skel-container">
+        <p>SKELEKRON UI · Foundation 0.1.0 · HTML, CSS, and Sass</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>
