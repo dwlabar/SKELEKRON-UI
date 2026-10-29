@@ -4,10 +4,90 @@
 // Presentation for index.html only; never required by the toolkit.
 @use "settings" as t;
 @use "tools/rem" as *;
+@use "tools/breakpoint" as *;
 
-.demo-header,
 .demo-footer {
   background: t.$color-surface;
+  border-block-start: 1px solid t.$color-border;
+}
+
+// --- Hero artwork and composition -------------------------------------------
+.demo-header {
+  position: relative;
+  isolation: isolate;
+  padding-block: t.$space-4 0;
+  background: t.$color-background;
+}
+
+.demo-hero {
+  position: relative;
+  padding-block-end: t.$space-6;
+}
+
+.demo-hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.demo-hero h1 {
+  font-size: clamp(rem(36), 4.5vw, rem(60));
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.demo-hero__content > p:not(.demo-label) {
+  max-inline-size: 36ch;
+  margin-block-end: t.$space-4;
+  font-size: rem(18);
+}
+
+.demo-hero__skull,
+.demo-hero__clouds {
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+.demo-hero__skull {
+  position: relative;
+  z-index: 1;
+  inline-size: 100%;
+  margin-block-start: t.$space-4;
+}
+
+.demo-hero__clouds {
+  position: absolute;
+  z-index: 0;
+  inset-inline-start: 50%;
+  inset-block-end: 0;
+  inline-size: 100%;
+  max-inline-size: rem(1672);
+  transform: translateX(-50%);
+}
+
+@include breakpoint(medium) {
+  .demo-hero {
+    min-block-size: rem(600);
+    padding-block-start: t.$space-4;
+    padding-block-end: rem(180);
+  }
+
+  .demo-hero__content {
+    inline-size: 46%;
+  }
+
+  .demo-hero__skull {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: t.$space-4;
+    inline-size: 82%;
+    margin: 0;
+  }
+}
+
+@include breakpoint(large) {
+  .demo-hero {
+    min-block-size: rem(680);
+  }
 }
 
 // --- Navigation and actions -------------------------------------------------
@@ -20,7 +100,22 @@
 }
 
 .demo-nav {
-  margin-block-end: t.$space-5;
+  gap: t.$space-2 t.$space-4;
+  margin-block-end: t.$space-6;
+}
+
+.demo-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: rem(44);
+  color: t.$color-text;
+  font-size: rem(14);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+}
+
+.demo-nav a:hover {
+  color: t.$color-primary;
 }
 
 .demo-actions {
@@ -29,8 +124,11 @@
 
 // --- Labels and sections ----------------------------------------------------
 .demo-label {
+  color: t.$color-primary;
   font-size: rem(14);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .demo-section + .demo-section {
@@ -78,6 +176,7 @@
 // --- Keyboard skip link -----------------------------------------------------
 .demo-skip {
   position: absolute;
+  z-index: 3;
   inset-inline-start: t.$space-3;
   inset-block-start: t.$space-3;
   padding: t.$space-2 t.$space-3;

@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  color: #202a35;
+  color: #111d32;
   background: #ffffff;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1rem;
@@ -14,7 +14,7 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid #9b3900;
+  outline: 3px solid #005bd6;
   outline-offset: 3px;
 }
 
@@ -60,12 +60,12 @@ img {
 }
 
 :where(a) {
-  color: #2452a1;
+  color: #005bd6;
   text-underline-offset: 0.2em;
 }
 
 :where(a:hover) {
-  color: #193c79;
+  color: #0043a1;
 }
 
 .skel-container {
@@ -119,9 +119,9 @@ img {
   min-block-size: 2.75rem;
   max-inline-size: 100%;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #667483;
-  border-radius: 0.25rem;
-  color: #202a35;
+  border: 1px solid #718199;
+  border-radius: 0.125rem;
+  color: #111d32;
   background: #ffffff;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1rem;
@@ -133,42 +133,42 @@ img {
   cursor: pointer;
 }
 .skel-button:hover:not(:disabled) {
-  color: #202a35;
-  background: #eef1f4;
+  color: #111d32;
+  background: #f2f7fc;
 }
 .skel-button:focus-visible {
-  outline: 3px solid #9b3900;
+  outline: 3px solid #005bd6;
   outline-offset: 3px;
 }
 
 .skel-button--primary {
-  border-color: #2452a1;
+  border-color: #005bd6;
   color: #ffffff;
-  background: #2452a1;
+  background: #005bd6;
 }
 .skel-button--primary:hover:not(:disabled) {
   color: #ffffff;
-  background: #193c79;
+  background: #0043a1;
 }
 
 .skel-button--secondary {
-  border-color: #344454;
+  border-color: #172842;
   color: #ffffff;
-  background: #344454;
+  background: #172842;
 }
 .skel-button--secondary:hover:not(:disabled) {
   color: #ffffff;
-  background: #202e3c;
+  background: #0b172a;
 }
 
 .skel-button--outline {
-  border-color: #2452a1;
-  color: #2452a1;
+  border-color: #005bd6;
+  color: #005bd6;
   background: transparent;
 }
 .skel-button--outline:hover:not(:disabled) {
   color: #ffffff;
-  background: #2452a1;
+  background: #005bd6;
 }
 
 .skel-button:disabled {

@@ -1,8 +1,82 @@
-.demo-header,
 .demo-footer {
-  background: #eef1f4;
+  background: #f2f7fc;
+  border-block-start: 1px solid #718199;
 }
 
+.demo-header {
+  position: relative;
+  isolation: isolate;
+  padding-block: 1.5rem 0;
+  background: #ffffff;
+}
+
+.demo-hero {
+  position: relative;
+  padding-block-end: 3rem;
+}
+
+.demo-hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.demo-hero h1 {
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.demo-hero__content > p:not(.demo-label) {
+  max-inline-size: 36ch;
+  margin-block-end: 1.5rem;
+  font-size: 1.125rem;
+}
+
+.demo-hero__skull,
+.demo-hero__clouds {
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+.demo-hero__skull {
+  position: relative;
+  z-index: 1;
+  inline-size: 100%;
+  margin-block-start: 1.5rem;
+}
+
+.demo-hero__clouds {
+  position: absolute;
+  z-index: 0;
+  inset-inline-start: 50%;
+  inset-block-end: 0;
+  inline-size: 100%;
+  max-inline-size: 104.5rem;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 48rem) {
+  .demo-hero {
+    min-block-size: 37.5rem;
+    padding-block-start: 1.5rem;
+    padding-block-end: 11.25rem;
+  }
+  .demo-hero__content {
+    inline-size: 46%;
+  }
+  .demo-hero__skull {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 1.5rem;
+    inline-size: 82%;
+    margin: 0;
+  }
+}
+@media (min-width: 72rem) {
+  .demo-hero {
+    min-block-size: 42.5rem;
+  }
+}
 .demo-nav,
 .demo-actions {
   display: flex;
@@ -12,7 +86,22 @@
 }
 
 .demo-nav {
-  margin-block-end: 2rem;
+  gap: 0.5rem 1.5rem;
+  margin-block-end: 3rem;
+}
+
+.demo-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  color: #111d32;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+}
+
+.demo-nav a:hover {
+  color: #005bd6;
 }
 
 .demo-actions {
@@ -20,12 +109,15 @@
 }
 
 .demo-label {
+  color: #005bd6;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .demo-section + .demo-section {
-  border-block-start: 1px solid #667483;
+  border-block-start: 1px solid #718199;
 }
 
 .demo-grid {
@@ -35,8 +127,8 @@
 .demo-cell,
 .demo-container-example {
   padding-block: 1rem;
-  border: 1px solid #667483;
-  background: #eef1f4;
+  border: 1px solid #718199;
+  background: #f2f7fc;
 }
 
 .demo-cell {
@@ -66,10 +158,11 @@
 
 .demo-skip {
   position: absolute;
+  z-index: 3;
   inset-inline-start: 1rem;
   inset-block-start: 1rem;
   padding: 0.5rem 1rem;
-  color: #202a35;
+  color: #111d32;
   background: #ffffff;
 }
 .demo-skip:not(:focus) {
