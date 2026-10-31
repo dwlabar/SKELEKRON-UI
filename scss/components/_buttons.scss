@@ -51,11 +51,11 @@
 // --- Secondary modifier -----------------------------------------------------
 .skel-button--secondary {
   border-color: var(--skel-color-secondary);
-  color: var(--skel-color-on-accent);
+  color: var(--skel-color-on-secondary);
   background: var(--skel-color-secondary);
 
   &:hover:not(:disabled) {
-    color: var(--skel-color-on-accent);
+    color: var(--skel-color-on-secondary);
     background: var(--skel-color-secondary-hover);
   }
 }

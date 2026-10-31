@@ -5,6 +5,7 @@
 
 :root,
 :root[data-skel-theme=light] {
+  --demo-hero-background-color: #F8FAFC;
   --demo-hero-background-image: none;
   --demo-building-midtone: #a3a3a3;
   --demo-building-highlight: #ededed;
@@ -13,6 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-skel-theme=light]):not([data-skel-theme=dark]) {
+    --demo-hero-background-color: var(--skel-color-background);
     --demo-hero-background-image: radial-gradient(
       ellipse 40.625rem 34.375rem at calc(50% + min(12vw, 7.5rem)) 0,
       rgba(229, 233, 239, 0.07),
@@ -24,6 +26,7 @@
   }
 }
 :root[data-skel-theme=dark] {
+  --demo-hero-background-color: var(--skel-color-background);
   --demo-hero-background-image: radial-gradient(
     ellipse 40.625rem 34.375rem at calc(50% + min(12vw, 7.5rem)) 0,
     rgba(229, 233, 239, 0.07),
@@ -39,6 +42,7 @@
   isolation: isolate;
   padding-block: 1.5rem 0;
   background: var(--skel-color-background);
+  background-color: var(--demo-hero-background-color);
   background-image: var(--demo-hero-background-image);
   border-block-end: solid 0.25rem var(--demo-building-midtone);
 }

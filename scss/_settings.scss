@@ -10,12 +10,13 @@ $color-text: #111d32 !default;
 $color-background: #ffffff !default;
 $color-surface: #f2f7fc !default;
 $color-border: #718199 !default;
-$color-primary: #176B83 !default;
-$color-primary-hover: #10556B !default;
-$color-secondary: #172842 !default;
-$color-secondary-hover: #0b172a !default;
+$color-primary: #286D96 !default;
+$color-primary-hover: #205879 !default;
+$color-secondary: #DCE5EC !default;
+$color-secondary-hover: #c8d6e0 !default;
 $color-on-accent: #ffffff !default;
-$color-focus: #176B83 !default;
+$color-on-secondary: $color-text !default;
+$color-focus: #286D96 !default;
 
 // --- Dark palette -----------------------------------------------------------
 $color-dark-text: #e5e9ef !default;
@@ -27,6 +28,7 @@ $color-dark-primary-hover: #a3c9dd !default;
 $color-dark-secondary: #AABDC8 !default;
 $color-dark-secondary-hover: #bdc7d3 !default;
 $color-dark-on-accent: $color-dark-background !default;
+$color-dark-on-secondary: $color-dark-on-accent !default;
 $color-dark-focus: $color-dark-primary-hover !default;
 
 // --- Typography -------------------------------------------------------------

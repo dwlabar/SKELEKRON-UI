@@ -15,6 +15,7 @@
     --skel-color-secondary: #{t.$color-dark-secondary};
     --skel-color-secondary-hover: #{t.$color-dark-secondary-hover};
     --skel-color-on-accent: #{t.$color-dark-on-accent};
+    --skel-color-on-secondary: #{t.$color-dark-on-secondary};
     --skel-color-focus: #{t.$color-dark-focus};
   } @else {
     --skel-color-text: #{t.$color-text};
@@ -26,6 +27,7 @@
     --skel-color-secondary: #{t.$color-secondary};
     --skel-color-secondary-hover: #{t.$color-secondary-hover};
     --skel-color-on-accent: #{t.$color-on-accent};
+    --skel-color-on-secondary: #{t.$color-on-secondary};
     --skel-color-focus: #{t.$color-focus};
   }
 }

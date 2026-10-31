@@ -7,7 +7,7 @@
   Explicit skelekron.scss master, root Sass settings, rem() and named breakpoint
   tools, grouped base/layout/component partials, skel- naming, explicit BEM
   modifiers, static demo, and usage documentation. Release remains 0.1.0.
-- **T02 — Modal / lightbox:** Next; not started. Scope and accessibility behavior
+- **T02 — Modal / lightbox:** Backlog; not started. Scope and accessibility behavior
   will be defined in a separate task.
 - **T03 — SKELEKRON Theme & Hero: COMPLETE.** White/navy foundation palette,
   electric-blue controls and labels, responsive skull/cloud image layers, and
@@ -34,8 +34,13 @@
   and focus colors retained.
   Release remains 0.1.0.
 
+- **T08 — Light Theme Refinement: COMPLETE.** Muted blue primary #286D96,
+  soft secondary #DCE5EC with dark text, and demo-only #F8FAFC hero background.
+  Implemented on `codex/0.1.0-t08-light-theme-polish`; visually approved for commit and local master integration.
+  Dark palette, artwork, layout, and release 0.1.0 preserved.
+
 T07 finalization includes the accumulated T04/T05 theme and hero work.
-Next: **T02 — Modal / lightbox**, with scope defined in a separate task.
+Next: **0.1.0 public release preparation**.
 Release remains 0.1.0; no push, tag, or publication.
 
 ### T01 verification — 2026-10-28
@@ -141,3 +146,15 @@ its prior contrast results and usage documentation no longer describe the demo.
   building seam adjustment and comment. T06 styles remain removed.
 - Final build and whitespace checks passed; prior successful focused color and
   interaction checks retained without repeating the suite.
+
+### T08 verification — 2026-10-31
+
+- Sass build and whitespace checks passed. Focused Edge checks passed light/dark
+  text and button contrast, hover, keyboard focus, theme persistence/system
+  switching, and eight viewport/theme combinations without horizontal overflow.
+- Minimum tested normal text/link contrast: 5.24:1; border/focus: 3.67:1.
+  Secondary uses a separate semantic foreground to preserve primary white text
+  and the existing dark secondary foreground. No artwork or layout changes.
+- Maintainer approved T08 for commit and local master integration; release remains 0.1.0.
+- Final compiled-CSS consistency and whitespace checks passed; previously successful
+  browser/contrast checks were not repeated.

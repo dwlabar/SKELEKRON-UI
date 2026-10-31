@@ -14,6 +14,7 @@
 // --- Demo artwork colors ----------------------------------------------------
 :root,
 :root[data-skel-theme="light"] {
+  --demo-hero-background-color: #F8FAFC;
   --demo-hero-background-image: none;
   --demo-building-midtone: #a3a3a3;
   --demo-building-highlight: #ededed;
@@ -21,6 +22,7 @@
 }
 
 @mixin dark-artwork-colors {
+  --demo-hero-background-color: var(--skel-color-background);
   // Soft overhead light, slightly left of the skull; the slate base stays intact.
   --demo-hero-background-image: radial-gradient(
     ellipse #{rem(650)} #{rem(550)} at calc(50% + min(12vw, #{rem(120)})) 0,
@@ -48,6 +50,7 @@
   isolation: isolate;
   padding-block: t.$space-4 0;
   background: var(--skel-color-background);
+  background-color: var(--demo-hero-background-color);
   background-image: var(--demo-hero-background-image);
   border-block-end: solid rem(4) var(--demo-building-midtone);
 }
