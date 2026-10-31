@@ -85,6 +85,107 @@
   z-index: 1;
   inline-size: 100%;
   margin-block-start: t.$space-4;
+  animation: skull-hover 6s ease-in-out infinite;
+}
+
+.demo-hero__skull > img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.demo-hero__particles {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  overflow: visible;
+  fill: #36e7ff;
+}
+
+.demo-hero__particles path {
+  opacity: 0;
+  animation: skull-particle 1.8s linear infinite;
+}
+
+.demo-hero__particles path:nth-child(5n + 2) {
+  animation-delay: -0.8s;
+  animation-duration: 2s;
+}
+
+.demo-hero__particles path:nth-child(5n + 3) {
+  animation-delay: -1.3s;
+  animation-duration: 1.6s;
+}
+
+.demo-hero__particles path:nth-child(5n + 4) {
+  animation-delay: -0.5s;
+  animation-duration: 2.1s;
+}
+
+.demo-hero__particles path:nth-child(5n + 5) {
+  animation-delay: -1.6s;
+  animation-duration: 1.9s;
+}
+
+.demo-hero__particles path:nth-child(6) {
+  animation-delay: -1.1s;
+}
+
+.demo-hero__shimmer {
+  opacity: 0;
+  animation: skull-shimmer 3.2s ease-in-out infinite;
+}
+
+.demo-hero__shimmer--head {
+  animation-duration: 4.6s;
+  animation-delay: -1.7s;
+}
+
+@keyframes skull-shimmer {
+  0%,
+  100% {
+    opacity: 0.06;
+  }
+
+  50% {
+    opacity: 0.28;
+  }
+}
+
+@keyframes skull-hover {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-24px);
+  }
+}
+
+@keyframes skull-particle {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  15% {
+    opacity: 0.85;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(72px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-hero__skull,
+  .demo-hero__shimmer,
+  .demo-hero__particles path {
+    animation: none;
+  }
 }
 
 .demo-hero__artwork {

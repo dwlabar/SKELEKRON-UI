@@ -26,7 +26,33 @@
           <p>A small starting point: readable type, responsive layout, and everyday buttons.</p>
           <a class="skel-button skel-button--primary" href="#get-started">Get started</a>
         </div>
-        <img class="demo-hero__skull" src="assets/hero-skull-v3.png" alt="" width="1538" height="1022" fetchpriority="high">
+        <div class="demo-hero__skull" aria-hidden="true">
+          <img src="assets/hero-skull-v3.png" alt="" width="1538" height="1022" fetchpriority="high">
+          <svg class="demo-hero__particles" viewBox="0 0 1538 1022" aria-hidden="true" focusable="false">
+            <path d="M 754.05 890.65 l 4.9 -4.2 v 11.9 l -4.9 4.2 z" />
+            <path d="M 797.4 943.1 l 9.2 -8.05 v 21.85 l -9.2 8.05 z" />
+            <path d="M 843.525 972.825 l 5.95 -5.95 v 15.3 l -5.95 6.8 z" />
+            <path d="M 886.95 937.35 l 9.1 -10.4 v 23.4 l -9.1 11.7 z" />
+            <path d="M 933 877 l 6 -6 v 16 l -6 7 z" />
+            <path d="M 819 909 l 9 9 v 29 l -9 9 l -9 -9 v -29 z" />
+            <path d="M 864 985 l 12 12 v 37 l -12 12 l -12 -12 v -37 z" />
+            <path d="M 908 958 l 8 8 v 25 l -8 8 l -8 -8 v -25 z" />
+            <path d="M 783 970 l 5 -5 v 14 l -5 5 z" />
+            <path d="M 922 1010 l 6 -6 v 16 l -6 6 z" />
+            <defs>
+              <radialGradient id="hero-shimmer">
+                <stop offset="0" stop-color="#f4ffff" stop-opacity="0.6" />
+                <stop offset="0.45" stop-color="#36e7ff" stop-opacity="0.3" />
+                <stop offset="1" stop-color="#36e7ff" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <ellipse class="demo-hero__shimmer" cx="865" cy="863" rx="53" ry="125" fill="url(#hero-shimmer)" />
+            <g class="demo-hero__shimmer demo-hero__shimmer--head" fill="url(#hero-shimmer)">
+              <ellipse cx="701" cy="329" rx="65" ry="57" />
+              <ellipse cx="1143" cy="314" rx="48" ry="82" />
+            </g>
+          </svg>
+        </div>
       </div>
       <div class="demo-hero__artwork" aria-hidden="true">
         <svg class="demo-hero__buildings" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="642.49982mm" height="79.999763mm" viewBox="0 0 642.49982 79.999762" id="space-buildings">
