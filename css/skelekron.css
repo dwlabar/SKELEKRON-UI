@@ -1,3 +1,60 @@
+:root {
+  color-scheme: light;
+  --skel-color-text: #111d32;
+  --skel-color-background: #ffffff;
+  --skel-color-surface: #f2f7fc;
+  --skel-color-border: #718199;
+  --skel-color-primary: #176B83;
+  --skel-color-primary-hover: #10556B;
+  --skel-color-secondary: #172842;
+  --skel-color-secondary-hover: #0b172a;
+  --skel-color-on-accent: #ffffff;
+  --skel-color-focus: #176B83;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-skel-theme=light]):not([data-skel-theme=dark]) {
+    color-scheme: dark;
+    --skel-color-text: #e5e9ef;
+    --skel-color-background: #171c27;
+    --skel-color-surface: #232a35;
+    --skel-color-border: #788391;
+    --skel-color-primary: #82B5D0;
+    --skel-color-primary-hover: #a3c9dd;
+    --skel-color-secondary: #AABDC8;
+    --skel-color-secondary-hover: #bdc7d3;
+    --skel-color-on-accent: #171c27;
+    --skel-color-focus: #a3c9dd;
+  }
+}
+:root[data-skel-theme=light] {
+  color-scheme: light;
+  --skel-color-text: #111d32;
+  --skel-color-background: #ffffff;
+  --skel-color-surface: #f2f7fc;
+  --skel-color-border: #718199;
+  --skel-color-primary: #176B83;
+  --skel-color-primary-hover: #10556B;
+  --skel-color-secondary: #172842;
+  --skel-color-secondary-hover: #0b172a;
+  --skel-color-on-accent: #ffffff;
+  --skel-color-focus: #176B83;
+}
+
+:root[data-skel-theme=dark] {
+  color-scheme: dark;
+  --skel-color-text: #e5e9ef;
+  --skel-color-background: #171c27;
+  --skel-color-surface: #232a35;
+  --skel-color-border: #788391;
+  --skel-color-primary: #82B5D0;
+  --skel-color-primary-hover: #a3c9dd;
+  --skel-color-secondary: #AABDC8;
+  --skel-color-secondary-hover: #bdc7d3;
+  --skel-color-on-accent: #171c27;
+  --skel-color-focus: #a3c9dd;
+}
+
 *,
 *::before,
 *::after {
@@ -6,15 +63,15 @@
 
 body {
   margin: 0;
-  color: #111d32;
-  background: #ffffff;
+  color: var(--skel-color-text);
+  background: var(--skel-color-background);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
 }
 
 :focus-visible {
-  outline: 3px solid #005bd6;
+  outline: 3px solid var(--skel-color-focus);
   outline-offset: 3px;
 }
 
@@ -60,12 +117,12 @@ img {
 }
 
 :where(a) {
-  color: #005bd6;
+  color: var(--skel-color-primary);
   text-underline-offset: 0.2em;
 }
 
 :where(a:hover) {
-  color: #0043a1;
+  color: var(--skel-color-primary-hover);
 }
 
 .skel-container {
@@ -119,10 +176,10 @@ img {
   min-block-size: 2.75rem;
   max-inline-size: 100%;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #718199;
+  border: 1px solid var(--skel-color-border);
   border-radius: 0.125rem;
-  color: #111d32;
-  background: #ffffff;
+  color: var(--skel-color-text);
+  background: var(--skel-color-background);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -133,42 +190,42 @@ img {
   cursor: pointer;
 }
 .skel-button:hover:not(:disabled) {
-  color: #111d32;
-  background: #f2f7fc;
+  color: var(--skel-color-text);
+  background: var(--skel-color-surface);
 }
 .skel-button:focus-visible {
-  outline: 3px solid #005bd6;
+  outline: 3px solid var(--skel-color-focus);
   outline-offset: 3px;
 }
 
 .skel-button--primary {
-  border-color: #005bd6;
-  color: #ffffff;
-  background: #005bd6;
+  border-color: var(--skel-color-primary);
+  color: var(--skel-color-on-accent);
+  background: var(--skel-color-primary);
 }
 .skel-button--primary:hover:not(:disabled) {
-  color: #ffffff;
-  background: #0043a1;
+  color: var(--skel-color-on-accent);
+  background: var(--skel-color-primary-hover);
 }
 
 .skel-button--secondary {
-  border-color: #172842;
-  color: #ffffff;
-  background: #172842;
+  border-color: var(--skel-color-secondary);
+  color: var(--skel-color-on-accent);
+  background: var(--skel-color-secondary);
 }
 .skel-button--secondary:hover:not(:disabled) {
-  color: #ffffff;
-  background: #0b172a;
+  color: var(--skel-color-on-accent);
+  background: var(--skel-color-secondary-hover);
 }
 
 .skel-button--outline {
-  border-color: #005bd6;
-  color: #005bd6;
+  border-color: var(--skel-color-primary);
+  color: var(--skel-color-primary);
   background: transparent;
 }
 .skel-button--outline:hover:not(:disabled) {
-  color: #ffffff;
-  background: #005bd6;
+  color: var(--skel-color-on-accent);
+  background: var(--skel-color-primary);
 }
 
 .skel-button:disabled {

@@ -10,12 +10,24 @@ $color-text: #111d32 !default;
 $color-background: #ffffff !default;
 $color-surface: #f2f7fc !default;
 $color-border: #718199 !default;
-$color-primary: #005bd6 !default;
-$color-primary-hover: #0043a1 !default;
+$color-primary: #176B83 !default;
+$color-primary-hover: #10556B !default;
 $color-secondary: #172842 !default;
 $color-secondary-hover: #0b172a !default;
 $color-on-accent: #ffffff !default;
-$color-focus: #005bd6 !default;
+$color-focus: #176B83 !default;
+
+// --- Dark palette -----------------------------------------------------------
+$color-dark-text: #e5e9ef !default;
+$color-dark-background: #171c27 !default;
+$color-dark-surface: #232a35 !default;
+$color-dark-border: #788391 !default;
+$color-dark-primary: #82B5D0 !default;
+$color-dark-primary-hover: #a3c9dd !default;
+$color-dark-secondary: #AABDC8 !default;
+$color-dark-secondary-hover: #bdc7d3 !default;
+$color-dark-on-accent: $color-dark-background !default;
+$color-dark-focus: $color-dark-primary-hover !default;
 
 // --- Typography -------------------------------------------------------------
 $font-family: (system-ui, -apple-system, "Segoe UI", sans-serif) !default;

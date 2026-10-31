@@ -14,8 +14,29 @@
   demo-only hero composition implemented on `codex/0.1.0-t03-theme-hero`.
   Visually accepted by the maintainer on 2026-10-29; release remains 0.1.0.
 
-T01 changes remain uncommitted for review. No merge, push, tag, publication, or
-release-version change is part of this task.
+- **T04 — Light/Dark Theme Support: REVIEW.** Centralized Sass palettes, semantic
+  CSS colors, system/manual selection, and an optional persistent demo selector
+  implemented on `codex/0.1.0-t04-light-dark-themes`. Awaiting maintainer visual
+  review; release remains 0.1.0.
+
+- **T05 — Hero SVG & Layout Refinement: REVIEW.** Supplied buildings SVG inlined
+  with original geometry and IDs, three demo-only theme colors, and a responsive
+  Grid-centered artwork layer on `codex/0.1.0-t05-hero-svg`. Existing uncommitted
+  T04 work preserved. Awaiting maintainer visual review; release remains 0.1.0.
+
+- **T06 — Inverse Section Colors: WITHDRAWN.** Removed by T07 at the maintainer's
+  request; sections use the normal theme palette again.
+- **T07 — Dark Theme Refinement & Cleanup: COMPLETE.** Removed T06's dedicated
+  section palette and demo coupling. Refined existing dark tokens toward cool
+  steel neutrals and added one subtle demo-only radial hero light. Implemented
+  on `codex/0.1.0-t07-dark-theme-polish`; approved for commit and local master integration on 2026-10-31.
+  Final dark accents: primary #82B5D0 and secondary #AABDC8; approved hover
+  and focus colors retained.
+  Release remains 0.1.0.
+
+T07 finalization includes the accumulated T04/T05 theme and hero work.
+Next: **T02 — Modal / lightbox**, with scope defined in a separate task.
+Release remains 0.1.0; no push, tag, or publication.
 
 ### T01 verification — 2026-10-28
 
@@ -58,3 +79,65 @@ release-version change is part of this task.
   passed again with the selected replacement.
 - No dependencies, application JavaScript, or release-version changes.
   T02 remains unstarted. No push or tag is part of this integration.
+
+### T04 verification — 2026-10-29
+
+- Existing Sass build passed; both generated stylesheets updated.
+- Existing six-width layout/interaction checks passed without browser errors.
+- Focused Edge checks passed explicit light/dark selection, live system changes,
+  manual preference persistence, return to System, disabled JavaScript, and
+  unavailable storage. README CSS overrides passed in automatic and manual modes.
+- Sass light/dark configuration and independent button module compilation passed.
+- Both palettes passed 4.5:1 text/button contrast and 3:1 border/focus contrast
+  against their intended backgrounds, including hover colors.
+- Light/dark checks at 320, 768, and 1440px found no horizontal overflow.
+  Hero and selector focus screenshots inspected; footer selector preserves the
+  existing hero composition. Supplied artwork remains unchanged.
+- T04 remains uncommitted for maintainer visual review. No dependencies or
+  release-version changes; no commit, merge, push, or tag.
+
+### T05 verification — 2026-10-30
+
+- Existing Sass build and six-width layout/interaction/customization/contrast
+  checks passed without browser errors or Sass warnings. Toolkit CSS unchanged.
+- Original SVG path attributes, IDs, dimensions, and viewBox verified unchanged.
+  Decorative artwork is hidden from accessibility APIs and ignores pointer input.
+- Focused Edge checks passed 36 combinations of light/dark themes, 16/20px root
+  sizes, and viewport widths from 320 through 2560px: proportional SVG sizing,
+  Grid centering, matching border/fill, seamless baseline, and no horizontal overflow.
+- Existing selector and live system theme switching update the artwork without
+  additional JavaScript. A narrower intrinsic-width image also centers correctly.
+- Desktop reference-size, tablet, and mobile screenshots visually inspected.
+  Skull sizing, positioning, and stacking remain unchanged, including the desktop
+  thruster over the lower skyline; dark background remains #171c27.
+- Active cloud styling/references removed; prior asset files retained to preserve
+  existing work. No dependencies or version changes. Changes remain uncommitted
+  for maintainer visual review; no merge, push, or tag.
+
+### T06 verification — historical
+
+T06's checks passed on 2026-10-30. The feature was subsequently withdrawn by T07;
+its prior contrast results and usage documentation no longer describe the demo.
+
+### T07 verification — 2026-10-31
+
+- Existing Sass build and whitespace checks passed. Removed feature references
+  from toolkit/demo SCSS, compiled CSS, HTML, and README; roadmap retains history.
+- Focused Edge checks passed both palettes, enabled button/link hover states,
+  theme select, visible keyboard focus, saved preference reload, and live system
+  switching. Minimum tested text/link contrast was 5.62:1; border/focus 3.67:1.
+- Eight viewport/theme combinations (320, 768, 1440, 2545px) passed centering,
+  no horizontal overflow, normal typography colors, and the preserved 4px border.
+- Skull file hash and SVG/hero markup verified unchanged. Existing light palette
+  preserved, with no gradient in light mode; exactly one radial gradient in dark.
+- Desktop/tablet dark controls and hero screenshots inspected. No browser errors.
+- Existing uncommitted work preserved except the requested T06 removal. No new
+  dependencies or JavaScript, version change, commit, merge, push, or tag.
+
+### T07 finalization — 2026-10-31
+
+- Maintainer approved the final implementation for commit and local master merge.
+- Preserved final primary #82B5D0, secondary #AABDC8, and the authored -1px
+  building seam adjustment and comment. T06 styles remain removed.
+- Final build and whitespace checks passed; prior successful focused color and
+  interaction checks retained without repeating the suite.

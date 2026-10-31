@@ -2,6 +2,7 @@
 // BUTTONS
 // =============================================================================
 @use "../settings" as t;
+@use "../theme";
 @use "../tools/rem" as *;
 
 .skel-button {
@@ -11,10 +12,10 @@
   min-block-size: rem(44);
   max-inline-size: 100%;
   padding: t.$space-2 t.$space-4;
-  border: 1px solid t.$color-border;
+  border: 1px solid var(--skel-color-border);
   border-radius: t.$button-radius;
-  color: t.$color-text;
-  background: t.$color-background;
+  color: var(--skel-color-text);
+  background: var(--skel-color-background);
   font-family: t.$font-family;
   font-size: t.$font-size;
   font-weight: 600;
@@ -25,49 +26,49 @@
   cursor: pointer;
 
   &:hover:not(:disabled) {
-    color: t.$color-text;
-    background: t.$color-surface;
+    color: var(--skel-color-text);
+    background: var(--skel-color-surface);
   }
 
   &:focus-visible {
-    outline: 3px solid t.$color-focus;
+    outline: 3px solid var(--skel-color-focus);
     outline-offset: 3px;
   }
 }
 
 // --- Primary modifier -------------------------------------------------------
 .skel-button--primary {
-  border-color: t.$color-primary;
-  color: t.$color-on-accent;
-  background: t.$color-primary;
+  border-color: var(--skel-color-primary);
+  color: var(--skel-color-on-accent);
+  background: var(--skel-color-primary);
 
   &:hover:not(:disabled) {
-    color: t.$color-on-accent;
-    background: t.$color-primary-hover;
+    color: var(--skel-color-on-accent);
+    background: var(--skel-color-primary-hover);
   }
 }
 
 // --- Secondary modifier -----------------------------------------------------
 .skel-button--secondary {
-  border-color: t.$color-secondary;
-  color: t.$color-on-accent;
-  background: t.$color-secondary;
+  border-color: var(--skel-color-secondary);
+  color: var(--skel-color-on-accent);
+  background: var(--skel-color-secondary);
 
   &:hover:not(:disabled) {
-    color: t.$color-on-accent;
-    background: t.$color-secondary-hover;
+    color: var(--skel-color-on-accent);
+    background: var(--skel-color-secondary-hover);
   }
 }
 
 // --- Outline modifier -------------------------------------------------------
 .skel-button--outline {
-  border-color: t.$color-primary;
-  color: t.$color-primary;
+  border-color: var(--skel-color-primary);
+  color: var(--skel-color-primary);
   background: transparent;
 
   &:hover:not(:disabled) {
-    color: t.$color-on-accent;
-    background: t.$color-primary;
+    color: var(--skel-color-on-accent);
+    background: var(--skel-color-primary);
   }
 }
 

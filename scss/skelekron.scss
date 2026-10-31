@@ -8,6 +8,9 @@
 @forward "tools/rem";
 @forward "tools/breakpoint";
 
+// --- Theme ------------------------------------------------------------------
+@use "theme";
+
 // --- Base -------------------------------------------------------------------
 @use "base/base";
 @use "base/typography";

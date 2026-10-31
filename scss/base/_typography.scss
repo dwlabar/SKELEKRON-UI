@@ -2,6 +2,7 @@
 // TYPOGRAPHY
 // =============================================================================
 @use "../settings" as t;
+@use "../theme";
 
 :where(h1, h2, h3, h4, h5, h6) {
   margin-block: 0 t.$space-3;
@@ -23,10 +24,10 @@
 
 // --- Links ------------------------------------------------------------------
 :where(a) {
-  color: t.$color-primary;
+  color: var(--skel-color-primary);
   text-underline-offset: 0.2em;
 }
 
 :where(a:hover) {
-  color: t.$color-primary-hover;
+  color: var(--skel-color-primary-hover);
 }

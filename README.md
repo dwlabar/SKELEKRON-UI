@@ -1,7 +1,7 @@
 # SKELEKRON UI
 
 A small HTML, CSS, and Sass foundation. **SKELEKRON** is the toolkit;
-**SKELEKRON UI** is the project, in the `SKELEKRON-UI` repository. Release **0.1.0** covers T01 only.
+**SKELEKRON UI** is the project, in the `SKELEKRON-UI` repository. Release **0.1.0**.
 
 ## Install and compile
 
@@ -99,11 +99,79 @@ them explicitly on nested grids when different values are needed. Breakpoints
 are Sass values because CSS custom properties cannot define media queries.
 
 Keep text/background and focus colors accessible when changing the palette.
-There are no generated utility classes, animation, themes, or extra components.
+There are no generated utility classes, animation, or extra components.
+
+## Light and dark themes
+
+Without a theme attribute, CSS follows `prefers-color-scheme`, including live
+system changes. No JavaScript is required. Set `<html data-skel-theme="light">`
+or `<html data-skel-theme="dark">` to force a theme; remove the attribute to
+return to System.
+
+The optional `assets/demo-theme.js` provides the demo's System / Light / Dark
+selector and saves manual choices under `skel-theme` in localStorage. If storage
+is blocked, switching still works for the current page. Without JavaScript,
+the selector stays hidden and CSS follows the system preference.
+
+### Sass colors (recompile)
+
+Existing `$color-…` settings configure light colors; `$color-dark-…` settings
+configure dark colors. All defaults live in `scss/_settings.scss`:
+
+```scss
+@use "skelekron" with (
+  $color-primary: #285943,
+  $color-primary-hover: #1c402f,
+  $color-focus: #285943,
+  $color-dark-primary: #9bd5b4,
+  $color-dark-primary-hover: #bce8ce,
+  $color-dark-focus: #9bd5b4
+);
+```
+
+Compile this consumer entry as described above, or edit the settings defaults
+and run `npm run build`. Non-color Sass configuration is unchanged.
+
+### Compiled CSS colors (no recompilation)
+
+Load overrides **after** the toolkit CSS. Cover automatic and manual modes:
+
+```css
+:root,
+:root[data-skel-theme="light"] {
+  --skel-color-primary: #285943;
+  --skel-color-primary-hover: #1c402f;
+  --skel-color-focus: #285943;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-skel-theme="light"]):not([data-skel-theme="dark"]) {
+    --skel-color-primary: #9bd5b4;
+    --skel-color-primary-hover: #bce8ce;
+    --skel-color-focus: #9bd5b4;
+  }
+}
+
+:root[data-skel-theme="dark"] {
+  --skel-color-primary: #9bd5b4;
+  --skel-color-primary-hover: #bce8ce;
+  --skel-color-focus: #9bd5b4;
+}
+```
+
+Semantic properties use `--skel-color-` followed by `text`, `background`,
+`surface`, `border`, `primary`, `primary-hover`, `secondary`, `secondary-hover`,
+`on-accent`, or `focus`. Check text, button, hover, border, and keyboard focus
+contrast after customizing either palette.
+
+Color-consuming base and button modules load the theme module automatically,
+so independent button usage retains both palettes. Sass emits the module once
+per compilation. Layout-only modules remain independent of theme colors.
 
 ## Structure and reference
 
 - `scss/_settings.scss`: all configurable defaults (`!default`).
+- `scss/_theme.scss`: semantic colors and automatic/manual theme selection.
 - `scss/tools/`: `rem()` and the map-based `breakpoint()` mixin; no emitted CSS.
 - `scss/base/`: global defaults and low-specificity typography.
 - `scss/layout/`: container, section, and native grid partials.

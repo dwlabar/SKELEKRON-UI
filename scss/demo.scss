@@ -7,8 +7,39 @@
 @use "tools/breakpoint" as *;
 
 .demo-footer {
-  background: t.$color-surface;
-  border-block-start: 1px solid t.$color-border;
+  background: var(--skel-color-surface);
+  border-block-start: 1px solid var(--skel-color-border);
+}
+
+// --- Demo artwork colors ----------------------------------------------------
+:root,
+:root[data-skel-theme="light"] {
+  --demo-hero-background-image: none;
+  --demo-building-midtone: #a3a3a3;
+  --demo-building-highlight: #ededed;
+  --demo-building-shadow: #626262;
+}
+
+@mixin dark-artwork-colors {
+  // Soft overhead light, slightly left of the skull; the slate base stays intact.
+  --demo-hero-background-image: radial-gradient(
+    ellipse #{rem(650)} #{rem(550)} at calc(50% + min(12vw, #{rem(120)})) 0,
+    #{rgba(t.$color-dark-text, 0.07)},
+    transparent
+  );
+  --demo-building-midtone: #858585;
+  --demo-building-highlight: #ffffff;
+  --demo-building-shadow: #424242;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-skel-theme="light"]):not([data-skel-theme="dark"]) {
+    @include dark-artwork-colors;
+  }
+}
+
+:root[data-skel-theme="dark"] {
+  @include dark-artwork-colors;
 }
 
 // --- Hero artwork and composition -------------------------------------------
@@ -16,7 +47,9 @@
   position: relative;
   isolation: isolate;
   padding-block: t.$space-4 0;
-  background: t.$color-background;
+  background: var(--skel-color-background);
+  background-image: var(--demo-hero-background-image);
+  border-block-end: solid rem(4) var(--demo-building-midtone);
 }
 
 .demo-hero {
@@ -42,9 +75,8 @@
 }
 
 .demo-hero__skull,
-.demo-hero__clouds {
+.demo-hero__artwork {
   pointer-events: none;
-  image-rendering: pixelated;
 }
 
 .demo-hero__skull {
@@ -54,14 +86,38 @@
   margin-block-start: t.$space-4;
 }
 
-.demo-hero__clouds {
+.demo-hero__artwork {
   position: absolute;
+  inset-inline: 0;
+  inset-block-end: -1px; // remove 1px space that appears at some screen widths
   z-index: 0;
-  inset-inline-start: 50%;
-  inset-block-end: 0;
-  inline-size: 100%;
-  max-inline-size: rem(1672);
-  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-items: end;
+}
+
+// Center any intrinsic-width image or SVG without transforms or cropping.
+.demo-hero__artwork > * {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.demo-hero__buildings {
+  inline-size: min(100%, #{rem(1821)});
+}
+
+.demo-hero__buildings #space-building-mid {
+  fill: var(--demo-building-midtone);
+}
+
+.demo-hero__buildings #space-building-highlight {
+  fill: var(--demo-building-highlight);
+}
+
+.demo-hero__buildings #space-building-shadow {
+  fill: var(--demo-building-shadow);
 }
 
 @include breakpoint(medium) {
@@ -108,14 +164,14 @@
   display: inline-flex;
   align-items: center;
   min-block-size: rem(44);
-  color: t.$color-text;
+  color: var(--skel-color-text);
   font-size: rem(14);
   font-weight: 600;
   text-decoration-thickness: 1px;
 }
 
 .demo-nav a:hover {
-  color: t.$color-primary;
+  color: var(--skel-color-primary);
 }
 
 .demo-actions {
@@ -124,7 +180,7 @@
 
 // --- Labels and sections ----------------------------------------------------
 .demo-label {
-  color: t.$color-primary;
+  color: var(--skel-color-primary);
   font-size: rem(14);
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -132,7 +188,7 @@
 }
 
 .demo-section + .demo-section {
-  border-block-start: 1px solid t.$color-border;
+  border-block-start: 1px solid var(--skel-color-border);
 }
 
 // --- Layout samples ---------------------------------------------------------
@@ -143,8 +199,8 @@
 .demo-cell,
 .demo-container-example {
   padding-block: t.$space-3;
-  border: 1px solid t.$color-border;
-  background: t.$color-surface;
+  border: 1px solid var(--skel-color-border);
+  background: var(--skel-color-surface);
 }
 
 .demo-cell {
@@ -180,8 +236,8 @@
   inset-inline-start: t.$space-3;
   inset-block-start: t.$space-3;
   padding: t.$space-2 t.$space-3;
-  color: t.$color-text;
-  background: t.$color-background;
+  color: var(--skel-color-text);
+  background: var(--skel-color-background);
 
   &:not(:focus) {
     clip-path: inset(50%);
@@ -190,4 +246,20 @@
     overflow: hidden;
     white-space: nowrap;
   }
+}
+
+// --- Theme preference -------------------------------------------------------
+.demo-theme {
+  margin-block-end: t.$space-3;
+}
+
+.demo-theme select {
+  min-block-size: rem(44);
+  margin-inline-start: t.$space-2;
+  padding: t.$space-2;
+  border: 1px solid var(--skel-color-border);
+  border-radius: t.$button-radius;
+  color: var(--skel-color-text);
+  background: var(--skel-color-background);
+  font: inherit;
 }

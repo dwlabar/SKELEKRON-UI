@@ -1,0 +1,53 @@
+// =============================================================================
+// THEME / SEMANTIC COLORS
+// =============================================================================
+@use "settings" as t;
+
+// Keep palette values in settings; emit the selected semantic properties here.
+@mixin colors($dark: false) {
+  @if $dark {
+    --skel-color-text: #{t.$color-dark-text};
+    --skel-color-background: #{t.$color-dark-background};
+    --skel-color-surface: #{t.$color-dark-surface};
+    --skel-color-border: #{t.$color-dark-border};
+    --skel-color-primary: #{t.$color-dark-primary};
+    --skel-color-primary-hover: #{t.$color-dark-primary-hover};
+    --skel-color-secondary: #{t.$color-dark-secondary};
+    --skel-color-secondary-hover: #{t.$color-dark-secondary-hover};
+    --skel-color-on-accent: #{t.$color-dark-on-accent};
+    --skel-color-focus: #{t.$color-dark-focus};
+  } @else {
+    --skel-color-text: #{t.$color-text};
+    --skel-color-background: #{t.$color-background};
+    --skel-color-surface: #{t.$color-surface};
+    --skel-color-border: #{t.$color-border};
+    --skel-color-primary: #{t.$color-primary};
+    --skel-color-primary-hover: #{t.$color-primary-hover};
+    --skel-color-secondary: #{t.$color-secondary};
+    --skel-color-secondary-hover: #{t.$color-secondary-hover};
+    --skel-color-on-accent: #{t.$color-on-accent};
+    --skel-color-focus: #{t.$color-focus};
+  }
+}
+
+:root {
+  color-scheme: light;
+  @include colors;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-skel-theme="light"]):not([data-skel-theme="dark"]) {
+    color-scheme: dark;
+    @include colors($dark: true);
+  }
+}
+
+:root[data-skel-theme="light"] {
+  color-scheme: light;
+  @include colors;
+}
+
+:root[data-skel-theme="dark"] {
+  color-scheme: dark;
+  @include colors($dark: true);
+}
