@@ -39,6 +39,11 @@
   Implemented on `codex/0.1.0-t08-light-theme-polish`; visually approved for commit and local master integration.
   Dark palette, artwork, layout, and release 0.1.0 preserved.
 
+- **T09 — Hero Animation & Effects: COMPLETE.** Skull hover animation,
+  exhaust particle movement, positioning, size and SVG shape variations, and
+  eye, ear, and thruster shimmer effects completed.
+  Visually approved by the maintainer on 2026-11-01; release remains 0.1.0.
+
 T07 finalization includes the accumulated T04/T05 theme and hero work.
 Next: **0.1.0 public release preparation**.
 Release remains 0.1.0; no push, tag, or publication.
