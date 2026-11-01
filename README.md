@@ -48,13 +48,17 @@ Change desktop grid columns with `--skel-grid-columns`, spacing with `--skel-gri
 
 All the main settings live in `scss/_settings.scss`: colors, fonts, spacing, breakpoints, layout widths, and button radius.
 
-To rebuild the CSS after changing Sass:
+To rebuild the CSS after changing Sass, install Node.js and npm, then run from
+the repository root:
 
 ```sh
+npm ci
 npm run build
 ```
 
-Use npm run watch to automatically rebuild as you work. The compiled CSS is ready to use without Node.js or npm.
+Run `npm ci` once after cloning (and again when the lockfile changes). Use
+`npm run watch` to automatically rebuild as you work. The compiled CSS is ready
+to use without Node.js or npm.
 
 You can also configure SKELEKRON from your own Sass file:
 
@@ -129,3 +133,9 @@ scss/demo/            Demo-only artwork and effects
 SKELEKRON uses modern Sass modules, semantic HTML, and `skel-` class names. Its layout and button styles can be included independently. There are no JavaScript components or animation utilities in this release.
 
 Inspired by my original Skeletor system, rebuilt independently with modern Sass. See [ROADMAP.md](ROADMAP.md) for what's next.
+
+## License
+
+Code and documentation are licensed under the [MIT License](LICENSE).
+Original demo artwork, including embedded SVG artwork, is excluded from the
+MIT License. Copyright 2026 David LaBar. All rights reserved for that artwork.

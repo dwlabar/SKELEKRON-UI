@@ -62,8 +62,17 @@ T07 finalization includes the accumulated T04/T05 theme and hero work.
   Build passed; compiled CSS differs only by the redundant declarations.
   Toolkit theme unchanged; maintainer approved finalization on 2026-11-01.
 
-Next: **0.1.0 release preparation**.
-T02 modal/lightbox remains an unstarted backlog feature.
+- **T13 — Release Preparation: DONE.** Inspected current master release-facing
+  documentation, licensing, package metadata, and tracked repository contents.
+  Added the missing dependency-install step to README development instructions.
+  Added the approved MIT license for code and documentation and package license
+  metadata. Original demo artwork, including embedded SVG artwork, is excluded;
+  all rights reserved. Maintainer approved finalization and local master
+  integration on 2026-11-01.
+  Version 0.1.0 and `private: true` are preserved.
+
+Next: **0.1.0 release approval**.
+T02 modal/lightbox remains deferred and unstarted.
 The dated verification notes below retain their original pre-finalization status.
 Release remains 0.1.0; no push, tag, or publication.
 
@@ -226,3 +235,19 @@ its prior contrast results and usage documentation no longer describe the demo.
   code changed since verification; successful build and focused checks retained
   without repetition. T11 is DONE; release remains 0.1.0.
 - No push, tag, branch deletion, or dependency changes.
+
+### T13 verification — 2026-11-01
+
+- Started from clean local master on `codex/0.1.0-t13-release-prep`.
+- Ran `npm run build` once successfully; both compiled CSS files are current
+  and unchanged. No comprehensive tests or repeat of T10's audit.
+- Package and lockfile agree on version 0.1.0 and Sass dependency; package
+  remains private. Tracked contents include Sass sources, compiled CSS, demo
+  assets, README, and lockfile; local dependencies and verification files are ignored.
+- Licensing decision resolved: added MIT LICENSE (Copyright 2026 David LaBar),
+  package license metadata, and README scope excluding original demo artwork,
+  including embedded SVG artwork, with all rights reserved. No additional build
+  or tests run for these licensing changes.
+- T13 is DONE; maintainer approved commit and local master integration.
+  T02 remains deferred. Task branch preserved; no additional tests, push, tag,
+  publication, version, feature, or dependency changes.
