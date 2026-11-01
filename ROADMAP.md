@@ -2,8 +2,8 @@
 
 ## Release 0.1.0
 
-- **T01 — SKELEKRON UI foundation refinement:** Implemented and focused verification complete;
-  awaiting maintainer review.
+- **T01 — SKELEKRON UI foundation refinement: COMPLETE.** Foundation committed
+  in `2279eee` and included in the accepted T03 baseline.
   Explicit skelekron.scss master, root Sass settings, rem() and named breakpoint
   tools, grouped base/layout/component partials, skel- naming, explicit BEM
   modifiers, static demo, and usage documentation. Release remains 0.1.0.
@@ -14,15 +14,15 @@
   demo-only hero composition implemented on `codex/0.1.0-t03-theme-hero`.
   Visually accepted by the maintainer on 2026-10-29; release remains 0.1.0.
 
-- **T04 — Light/Dark Theme Support: REVIEW.** Centralized Sass palettes, semantic
+- **T04 — Light/Dark Theme Support: COMPLETE.** Centralized Sass palettes, semantic
   CSS colors, system/manual selection, and an optional persistent demo selector
-  implemented on `codex/0.1.0-t04-light-dark-themes`. Awaiting maintainer visual
-  review; release remains 0.1.0.
+  implemented on `codex/0.1.0-t04-light-dark-themes`; finalized with T07.
+  Release remains 0.1.0.
 
-- **T05 — Hero SVG & Layout Refinement: REVIEW.** Supplied buildings SVG inlined
+- **T05 — Hero SVG & Layout Refinement: COMPLETE.** Supplied buildings SVG inlined
   with original geometry and IDs, three demo-only theme colors, and a responsive
   Grid-centered artwork layer on `codex/0.1.0-t05-hero-svg`. Existing uncommitted
-  T04 work preserved. Awaiting maintainer visual review; release remains 0.1.0.
+  T04 work preserved at implementation; finalized with T07. Release remains 0.1.0.
 
 - **T06 — Inverse Section Colors: WITHDRAWN.** Removed by T07 at the maintainer's
   request; sections use the normal theme palette again.
@@ -45,7 +45,14 @@
   Visually approved by the maintainer on 2026-11-01; release remains 0.1.0.
 
 T07 finalization includes the accumulated T04/T05 theme and hero work.
-Next: **0.1.0 public release preparation**.
+- **T10 — Pre-release Audit & Polish: REVIEW.** Refined README/demo copy,
+  separated demo Sass responsibilities, standardized subsection comments, and
+  reconciled documentation with the current implementation. Awaiting maintainer
+  review; changes remain uncommitted.
+
+Next: **0.1.0 public release preparation**, after T10 review.
+T02 modal/lightbox remains an unstarted backlog feature.
+The dated verification notes below retain their original pre-finalization status.
 Release remains 0.1.0; no push, tag, or publication.
 
 ### T01 verification — 2026-10-28
@@ -163,3 +170,20 @@ its prior contrast results and usage documentation no longer describe the demo.
 - Maintainer approved T08 for commit and local master integration; release remains 0.1.0.
 - Final compiled-CSS consistency and whitespace checks passed; previously successful
   browser/contrast checks were not repeated.
+
+### T10 verification — 2026-11-01
+
+- Sass build and all three README Sass examples compiled successfully.
+- Toolkit CSS is unchanged. Demo declarations, media queries, and keyframes
+  match the prior output after accounting for the explicit hero description
+  class; regrouping preserves cascade precedence and reduced-motion overrides.
+- Both inline SVGs are unchanged, including geometry and IDs. All 19 local
+  asset/stylesheet/script/section/form destinations resolve; IDs are unique.
+- All nine assets are present, tracked, and included by standard git archive.
+  No repository omission was found; the earlier uploaded archive was not
+  available to determine its exact export failure.
+- Setup guide now targets the rendered GitHub README; destination verified.
+- Manual browser review remains: revised copy wrapping at narrow widths,
+  light/dark hero composition, keyboard focus, and reduced-motion rendering.
+  Responsive and motion CSS were compared statically; no browser run in T10.
+- Release remains 0.1.0; changes are uncommitted.

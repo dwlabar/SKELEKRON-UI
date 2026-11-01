@@ -1,0 +1,122 @@
+// =============================================================================
+// DEMO / HERO COMPOSITION
+// =============================================================================
+@use "../settings" as t;
+@use "../tools/rem" as *;
+@use "../tools/breakpoint" as *;
+
+.demo-header {
+  position: relative;
+  isolation: isolate;
+  padding-block: t.$space-4 0;
+  background: var(--skel-color-background);
+  background-color: var(--demo-hero-background-color);
+  background-image: var(--demo-hero-background-image);
+  border-block-end: solid rem(4) var(--demo-building-midtone);
+}
+
+.demo-hero {
+  position: relative;
+  padding-block-end: t.$space-6;
+}
+
+.demo-hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.demo-hero h1 {
+  font-size: clamp(rem(36), 4.5vw, rem(60));
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.demo-hero__description {
+  max-inline-size: 36ch;
+  margin-block-end: t.$space-4;
+  font-size: rem(18);
+}
+
+.demo-hero__skull,
+.demo-hero__artwork {
+  pointer-events: none;
+}
+
+.demo-hero__skull {
+  position: relative;
+  z-index: 1;
+  inline-size: 100%;
+  margin-block-start: t.$space-4;
+}
+
+.demo-hero__skull > img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+// -----------------------------------------------------------------------------
+// SKYLINE
+// -----------------------------------------------------------------------------
+.demo-hero__artwork {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: -1px; // remove 1px space that appears at some screen widths
+  z-index: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-items: end;
+}
+
+// Center any intrinsic-width image or SVG without transforms or cropping.
+.demo-hero__artwork > * {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.demo-hero__buildings {
+  inline-size: min(100%, #{rem(1821)});
+}
+
+.demo-hero__buildings #space-building-mid {
+  fill: var(--demo-building-midtone);
+}
+
+.demo-hero__buildings #space-building-highlight {
+  fill: var(--demo-building-highlight);
+}
+
+.demo-hero__buildings #space-building-shadow {
+  fill: var(--demo-building-shadow);
+}
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE COMPOSITION
+// -----------------------------------------------------------------------------
+@include breakpoint(medium) {
+  .demo-hero {
+    min-block-size: rem(600);
+    padding-block-start: t.$space-4;
+    padding-block-end: rem(180);
+  }
+
+  .demo-hero__content {
+    inline-size: 46%;
+  }
+
+  .demo-hero__skull {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: t.$space-4;
+    inline-size: 82%;
+    margin: 0;
+  }
+}
+
+@include breakpoint(large) {
+  .demo-hero {
+    min-block-size: rem(680);
+  }
+}

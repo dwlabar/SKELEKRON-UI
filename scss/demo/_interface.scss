@@ -1,0 +1,143 @@
+// =============================================================================
+// DEMO / INTERFACE
+// =============================================================================
+@use "../settings" as t;
+@use "../tools/rem" as *;
+
+// -----------------------------------------------------------------------------
+// NAVIGATION AND ACTIONS
+// -----------------------------------------------------------------------------
+.demo-nav,
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: t.$space-3;
+}
+
+.demo-nav {
+  gap: t.$space-2 t.$space-4;
+  margin-block-end: t.$space-6;
+}
+
+.demo-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: rem(44);
+  color: var(--skel-color-text);
+  font-size: rem(14);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+}
+
+.demo-nav a:hover {
+  color: var(--skel-color-primary);
+}
+
+.demo-actions {
+  margin-block-end: t.$space-3;
+}
+
+// -----------------------------------------------------------------------------
+// LABELS AND SECTIONS
+// -----------------------------------------------------------------------------
+.demo-label {
+  color: var(--skel-color-primary);
+  font-size: rem(14);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.demo-section + .demo-section {
+  border-block-start: 1px solid var(--skel-color-border);
+}
+
+// -----------------------------------------------------------------------------
+// LAYOUT SAMPLES
+// -----------------------------------------------------------------------------
+.demo-grid {
+  margin-block-end: t.$space-4;
+}
+
+.demo-cell,
+.demo-container-example {
+  padding-block: t.$space-3;
+  border: 1px solid var(--skel-color-border);
+  background: var(--skel-color-surface);
+}
+
+.demo-cell {
+  padding-inline: t.$space-3;
+}
+
+.demo-container-example {
+  margin-block-end: t.$space-3;
+}
+
+// -----------------------------------------------------------------------------
+// IMAGE AND TYPE SAMPLES
+// -----------------------------------------------------------------------------
+.demo-image {
+  margin: 0;
+  max-inline-size: rem(640);
+}
+
+.demo-image figcaption {
+  margin-block-start: t.$space-2;
+}
+
+.demo-type-sample {
+  margin-block-end: t.$space-4;
+}
+
+.demo-type-sample > * {
+  display: block;
+}
+
+// -----------------------------------------------------------------------------
+// KEYBOARD SKIP LINK
+// -----------------------------------------------------------------------------
+.demo-skip {
+  position: absolute;
+  z-index: 3;
+  inset-inline-start: t.$space-3;
+  inset-block-start: t.$space-3;
+  padding: t.$space-2 t.$space-3;
+  color: var(--skel-color-text);
+  background: var(--skel-color-background);
+
+  &:not(:focus) {
+    clip-path: inset(50%);
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// THEME PREFERENCE
+// -----------------------------------------------------------------------------
+.demo-theme {
+  margin-block-end: t.$space-3;
+}
+
+.demo-theme select {
+  min-block-size: rem(44);
+  margin-inline-start: t.$space-2;
+  padding: t.$space-2;
+  border: 1px solid var(--skel-color-border);
+  border-radius: t.$button-radius;
+  color: var(--skel-color-text);
+  background: var(--skel-color-background);
+  font: inherit;
+}
+
+// -----------------------------------------------------------------------------
+// FOOTER
+// -----------------------------------------------------------------------------
+.demo-footer {
+  background: var(--skel-color-surface);
+  border-block-start: 1px solid var(--skel-color-border);
+}

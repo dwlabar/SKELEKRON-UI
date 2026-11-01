@@ -1,236 +1,99 @@
 # SKELEKRON UI
 
-A small HTML, CSS, and Sass foundation. **SKELEKRON** is the toolkit;
-**SKELEKRON UI** is the project, in the `SKELEKRON-UI` repository. Release **0.1.0**.
+SKELEKRON is a small CSS toolkit for building responsive websites. It covers the basics: typography, containers, grids, buttons, and light/dark themes.
 
-## Install and compile
+Use it with plain HTML or your favorite framework. No JavaScript required. The machine likes to keep things simple.
 
-Use Node.js 20.19+ and npm (Node.js 24 is used for verification).
+## Get started
 
-```sh
-npm ci
-npm run build
-npm run watch
-```
-
-`build` compiles the two Sass entry points into `css/`. `watch` recompiles when
-Sass files change; stop it with Ctrl+C. On PowerShell, use `npm.cmd` if script
-execution policy blocks `npm.ps1`. Dart Sass is the only direct development
-dependency. There is no JavaScript runtime or bundler.
-
-Open `index.html` directly to view the demo. Generated CSS is intentionally kept
-in the repository: a static host needs no Node.js. For GitHub Pages, publish the
-repository root after the reviewed changes have been committed and pushed. All
-demo URLs are relative, so repository subpaths work. Hosting is not configured
-by this task.
-
-## Use
-
-Link only the toolkit CSS in your own page. `demo.css` is optional presentation
-for this repository's demo.
+Copy `css/skelekron.css` into your project and add it to your page:
 
 ```html
 <link rel="stylesheet" href="css/skelekron.css">
+```
 
-<section class="skel-section" aria-labelledby="example-title">
+That's it. Here's a section using the container, grid, and button styles:
+
+```html
+<section class="skel-section">
   <div class="skel-container">
-    <h2 id="example-title">Example section</h2>
-    <div class="skel-grid" style="--skel-grid-columns: 2; --skel-grid-gap: 2rem;">
+    <h2>Systems online</h2>
+    <div class="skel-grid" style="--skel-grid-columns: 2;">
       <p>First column</p>
       <p>Second column</p>
     </div>
-    <a class="skel-button skel-button--primary" href="details.html">View details</a>
+    <button class="skel-button skel-button--primary" type="button">Engage</button>
   </div>
 </section>
 ```
 
-| Feature | API / default |
+The button is styled, not scripted. Add your own action when you need one.
+
+Open `index.html` to see the demo. Its artwork, animations, and `css/demo.css` are separate from the toolkit. The skull is not a dependency.
+
+## What's included
+
+| Feature | How to use it |
 | --- | --- |
-| Container | `.skel-container`, centered, maximum 72rem including padding |
-| Narrow / fluid | Add `.skel-container--narrow` (44rem) or `.skel-container--fluid` |
-| Local width | Set `--skel-container-max` on a container, e.g. `60rem` |
-| Section | `.skel-section`, 2rem block padding; 3rem from 48rem |
-| Grid | `.skel-grid`, one column below 48rem; three columns from 48rem |
-| Grid columns | `--skel-grid-columns`: positive integer, applied from 48rem |
-| Grid gutter | `--skel-grid-gap`: CSS gap value, including `0`; applies at all widths |
-| Default gutter | 1rem below 48rem; 1.5rem from 48rem |
-| Buttons | `.skel-button`, optionally with `--primary`, `--secondary`, or `--outline` modifiers |
+| Typography & images | Readable default text, headings, links, and responsive images. |
+| Containers | `.skel-container` centers content; `.skel-container--narrow` and `.skel-container--fluid` change its width. |
+| Sections | `.skel-section` adds responsive vertical spacing. |
+| Grid | `.skel-grid` stacks on small screens and uses three columns by default on larger screens. |
+| Buttons | `.skel-button` with `.skel-button--primary`, `.skel-button--secondary`, or `.skel-button--outline`. |
+| Themes | Light and dark colors, automatically matched to the visitor's system preference. |
 
-Use full modifier names such as `skel-button--outline` alongside the base class.
-Use links with real destinations for navigation/CTAs, and native `<button>`
-elements for actions. Specify button `type`; native `disabled` is supported.
-An anchor cannot be disabled with a `disabled` attribute. The demo includes a
-working submit button, anchor destinations, and an unavailable native button.
+Change desktop grid columns with `--skel-grid-columns`, spacing with `--skel-grid-gap`, or container width with `--skel-container-max`. Grids switch to multiple columns at `48rem`.
 
-The intentional globals are border-box sizing, body defaults, responsive images,
-keyboard focus, headings, paragraphs, and links. Typography uses low-specificity
-`:where()` selectors. Layout and buttons use `skel-` classes; no bare `section`,
-`button`, or form-control styling is imposed. Layout and buttons can be loaded
-independently through their Sass modules; buttons include their own focus style.
+## Customize it
 
-Images preserve their intrinsic aspect ratio and shrink to fit their container.
-Provide useful `alt` text and intrinsic `width`/`height` attributes. Keep headings
-in semantic order, and use the keyboard to check focus after customization.
+All the main settings live in `scss/_settings.scss`: colors, fonts, spacing, breakpoints, layout widths, and button radius.
 
-## Customize
+To rebuild the CSS after changing Sass:
 
-All configurable Sass defaults are in `scss/_settings.scss`, including
-colors, font settings and heading sizes, spacing, breakpoints, containers, grid,
-and button radius. Configure the module **before** loading any other toolkit
-module. In a separate consumer entry (with `scss/` on the Sass load path), use:
+```sh
+npm ci
+npm run build
+```
+
+Use `npm run watch` while editing. Node.js and npm are only needed for Sass development; the compiled CSS is ready to use as-is.
+
+You can also configure SKELEKRON from your own Sass file:
 
 ```scss
 @use "skelekron" with (
-  $color-primary: #285943,
-  $color-primary-hover: #1c402f,
-  $breakpoints: (medium: 50rem, large: 72rem),
   $container-max: 68rem,
   $grid-columns: 2,
-  $grid-gap: 1.25rem
+  $button-radius: 0
 );
 ```
 
-Compile that consumer entry with `sass --load-path=scss your-entry.scss your-output.css`.
-For this repository, run `npm run build` after changes. For a shared change affecting both the demo
-and toolkit entry points, edit the defaults in `_settings.scss`. A `with` block
-configures only its own compilation. CSS custom properties provide per-instance
-container/grid overrides without recompiling. Custom properties inherit, so set
-them explicitly on nested grids when different values are needed. Breakpoints
-are Sass values because CSS custom properties cannot define media queries.
+Compile it with `npx sass --load-path=scss your-entry.scss your-output.css`. Configure settings before loading other SKELEKRON modules.
 
-Keep text/background and focus colors accessible when changing the palette.
-There are no generated utility classes, animation, or extra components.
+### Light and dark themes
 
-## Light and dark themes
+SKELEKRON follows the visitor's system setting by default. To choose a theme yourself, set an attribute on `<html>`:
 
-Without a theme attribute, CSS follows `prefers-color-scheme`, including live
-system changes. No JavaScript is required. Set `<html data-skel-theme="light">`
-or `<html data-skel-theme="dark">` to force a theme; remove the attribute to
-return to System.
-
-The optional `assets/demo-theme.js` provides the demo's System / Light / Dark
-selector and saves manual choices under `skel-theme` in localStorage. If storage
-is blocked, switching still works for the current page. Without JavaScript,
-the selector stays hidden and CSS follows the system preference.
-
-### Sass colors (recompile)
-
-Existing `$color-…` settings configure light colors; `$color-dark-…` settings
-configure dark colors. All defaults live in `scss/_settings.scss`:
-
-```scss
-@use "skelekron" with (
-  $color-primary: #285943,
-  $color-primary-hover: #1c402f,
-  $color-focus: #285943,
-  $color-dark-primary: #9bd5b4,
-  $color-dark-primary-hover: #bce8ce,
-  $color-dark-focus: #9bd5b4
-);
+```html
+<html data-skel-theme="dark">
 ```
 
-Compile this consumer entry as described above, or edit the settings defaults
-and run `npm run build`. Non-color Sass configuration is unchanged.
+Use `light` for light mode or remove the attribute to follow the system again. The demo includes an optional JavaScript theme switcher, but the toolkit doesn't need it.
 
-### Compiled CSS colors (no recompilation)
+Edit both light and dark colors in `_settings.scss` to customize the palettes. The generated CSS also exposes `--skel-color-*` properties for CSS overrides.
 
-Load overrides **after** the toolkit CSS. Cover automatic and manual modes:
+## Project structure
 
-```css
-:root,
-:root[data-skel-theme="light"] {
-  --skel-color-primary: #285943;
-  --skel-color-primary-hover: #1c402f;
-  --skel-color-focus: #285943;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-skel-theme="light"]):not([data-skel-theme="dark"]) {
-    --skel-color-primary: #9bd5b4;
-    --skel-color-primary-hover: #bce8ce;
-    --skel-color-focus: #9bd5b4;
-  }
-}
-
-:root[data-skel-theme="dark"] {
-  --skel-color-primary: #9bd5b4;
-  --skel-color-primary-hover: #bce8ce;
-  --skel-color-focus: #9bd5b4;
-}
+```text
+scss/skelekron.scss   Toolkit entry point
+scss/_settings.scss   Colors, sizes, and other defaults
+scss/_theme.scss      Light and dark theme values
+scss/base/            Global styles and typography
+scss/layout/          Containers, sections, and grid
+scss/components/      Buttons
+scss/tools/           Sass helpers: rem() and breakpoint()
+scss/demo/            Demo-only artwork and effects
 ```
 
-Semantic properties use `--skel-color-` followed by `text`, `background`,
-`surface`, `border`, `primary`, `primary-hover`, `secondary`, `secondary-hover`,
-`on-accent`, or `focus`. Check text, button, hover, border, and keyboard focus
-contrast after customizing either palette.
+SKELEKRON uses modern Sass modules, semantic HTML, and `skel-` class names. Its layout and button styles can be included independently. There are no JavaScript components or animation utilities in this release.
 
-Color-consuming base and button modules load the theme module automatically,
-so independent button usage retains both palettes. Sass emits the module once
-per compilation. Layout-only modules remain independent of theme colors.
-
-## Structure and reference
-
-- `scss/_settings.scss`: all configurable defaults (`!default`).
-- `scss/_theme.scss`: semantic colors and automatic/manual theme selection.
-- `scss/tools/`: `rem()` and the map-based `breakpoint()` mixin; no emitted CSS.
-- `scss/base/`: global defaults and low-specificity typography.
-- `scss/layout/`: container, section, and native grid partials.
-- `scss/components/`: buttons and their explicit BEM modifiers.
-- `scss/skelekron.scss`: distributable CSS entry point.
-- `scss/demo.scss`: demo-only presentation.
-- `css/`: generated static CSS; keep this in sync with Sass.
-- `assets/layout-study.svg`: original geometric image for the image demo.
-
-The local historical Skeletor source (`../skeletor/src/styles/`) was reviewed for architecture: centralized
-settings, grouped partials, configurable layout, and base-plus-modifier buttons.
-This foundation is independently implemented. No historical source, branding,
-fonts, artwork, vendor code, or scripts are included. Native Grid and gap replace
-the historical calculated column widths; `@use`/`@forward` replace global imports.
-
-## Sass tools and conventions
-
-The master entry explicitly lists every CSS-producing module. Comment out an
-optional layout or component `@use` to omit it; there are no `_index.scss`
-wrappers. Settings and tools are forwarded by the master for consumer use.
-For independent modules, configure settings first:
-
-```scss
-@use "settings" with (
-  $breakpoints: (medium: 48rem, large: 72rem),
-  $grid-columns: 2
-);
-@use "tools/rem" as *;
-@use "tools/breakpoint" as *;
-@use "layout/grid";
-@use "components/buttons";
-
-.example {
-  padding: rem(24); // 1.5rem; rem(24px) works too.
-
-  @include breakpoint(medium) {
-    padding: rem(32);
-  }
-}
-```
-
-`rem()` uses `sass:math` with a 16px design baseline, not the body font size.
-It accepts unitless pixel measurements or px, and rejects other units. No html
-font-size override is emitted: rem values scale with the reader's browser root
-font size. Keep borders in px where a fixed thin line is intended.
-
-`breakpoint(name)` emits a min-width query from `$breakpoints` and reports
-unknown names as Sass errors. Defaults remain medium = 48rem and large = 72rem.
-The map can add or replace named thresholds; retain medium and large when
-loading the existing layout partials. The original `$breakpoint-medium` and
-`$breakpoint-large` defaults also remain configurable and seed the default map.
-There is no external breakpoint dependency.
-
-Use 2-space indentation, `// ===` dividers for major sections, and `// ---`
-dividers for subsections, modifiers, and states. Keep BEM blocks, elements
-(`skel-block__element`), and modifiers (`skel-block--modifier`) explicit.
-Nest pseudo-classes, pseudo-elements, and local breakpoints when helpful.
-Use `:where()` for low-specificity global typography, conventional classes
-for components, and `--skel-` for toolkit CSS custom properties. Demo-only
-`demo-` classes remain separate. Avoid unnecessary specificity and `!important`.
-
-See `ROADMAP.md` for actual task and verification status.
+Inspired by my original Skeletor system, rebuilt independently with modern Sass. See [ROADMAP.md](ROADMAP.md) for what's next.
