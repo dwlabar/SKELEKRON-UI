@@ -1,6 +1,7 @@
 // =============================================================================
 // CONTAINER
 // =============================================================================
+
 @use "../settings" as t;
 @use "../tools/breakpoint" as *;
 
@@ -10,7 +11,7 @@
   margin-inline: auto;
   padding-inline: t.$container-padding;
 
-  @include breakpoint(large) {
+  @include breakpoint(lg) {
     padding-inline: t.$container-padding-large;
   }
 }
@@ -18,6 +19,7 @@
 // -----------------------------------------------------------------------------
 // MODIFIERS
 // -----------------------------------------------------------------------------
+
 .skel-container--narrow {
   --skel-container-max: #{t.$container-narrow};
 }

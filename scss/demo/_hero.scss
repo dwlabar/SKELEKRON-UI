@@ -1,6 +1,7 @@
 // =============================================================================
 // DEMO / HERO COMPOSITION
 // =============================================================================
+
 @use "../settings" as t;
 @use "../tools/rem" as *;
 @use "../tools/breakpoint" as *;
@@ -58,6 +59,7 @@
 // -----------------------------------------------------------------------------
 // SKYLINE
 // -----------------------------------------------------------------------------
+
 .demo-hero__artwork {
   position: absolute;
   inset-inline: 0;
@@ -95,7 +97,8 @@
 // -----------------------------------------------------------------------------
 // RESPONSIVE COMPOSITION
 // -----------------------------------------------------------------------------
-@include breakpoint(medium) {
+
+@include breakpoint(md) {
   .demo-hero {
     min-block-size: rem(600);
     padding-block-start: t.$space-4;
@@ -115,7 +118,7 @@
   }
 }
 
-@include breakpoint(large) {
+@include breakpoint(lg) {
   .demo-hero {
     min-block-size: rem(680);
   }

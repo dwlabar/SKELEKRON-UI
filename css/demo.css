@@ -127,7 +127,7 @@
     margin: 0;
   }
 }
-@media (min-width: 72rem) {
+@media (min-width: 64rem) {
   .demo-hero {
     min-block-size: 42.5rem;
   }

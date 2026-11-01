@@ -1,6 +1,7 @@
 // =============================================================================
 // GRID
 // =============================================================================
+
 @use "../settings" as t;
 @use "../tools/breakpoint" as *;
 
@@ -13,7 +14,7 @@
     min-inline-size: 0;
   }
 
-  @include breakpoint(medium) {
+  @include breakpoint(md) {
     grid-template-columns: repeat(var(--skel-grid-columns, #{t.$grid-columns}), minmax(0, 1fr));
     gap: var(--skel-grid-gap, #{t.$grid-gap-large});
   }

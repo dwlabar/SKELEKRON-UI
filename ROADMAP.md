@@ -50,6 +50,12 @@ T07 finalization includes the accumulated T04/T05 theme and hero work.
   reconciled documentation with the current implementation. Awaiting maintainer
   review; changes remain uncommitted.
 
+- **T11 — Standardize Responsive Breakpoints: DONE.** Added configurable
+  sm/md/lg/xl Sass breakpoints at 640/768/1024/1280px and updated component
+  references and README usage. Container padding and taller demo hero now
+  transition at 1024px; container maximum and approved styling preserved.
+  Release remains 0.1.0; maintainer approved finalization on 2026-11-01.
+
 Next: **0.1.0 public release preparation**, after T10 review.
 T02 modal/lightbox remains an unstarted backlog feature.
 The dated verification notes below retain their original pre-finalization status.
@@ -187,3 +193,30 @@ its prior contrast results and usage documentation no longer describe the demo.
   light/dark hero composition, keyboard focus, and reduced-motion rendering.
   Responsive and motion CSS were compared statically; no browser run in T10.
 - Release remains 0.1.0; changes are uncommitted.
+
+### T11 verification — 2026-11-01
+
+- Existing Sass build passed without warnings or errors. All four default
+  breakpoint queries, individual token overrides, full map overrides, README
+  Sass examples, and unknown-name errors passed focused compilation checks.
+- Generated toolkit/demo CSS differs only in the intended 72rem to 64rem
+  media-query transition. The breakpoint mixin, container maximum, artwork,
+  animations, and other declarations are unchanged.
+- Focused Edge checks passed 56 combinations: light/dark, 16/20px root sizes,
+  and widths 320, 375, 639, 640, 767, 768, 1023, 1024, 1025, 1151, 1152,
+  1279, 1280, and 1440px. No horizontal overflow; grid columns, container
+  padding/maximum, section spacing, and hero transitions match expectations.
+- Boundary screenshots inspected at 1023/1024px in light mode and 1025px in
+  dark mode. At 1024px the container padding increases from 16px to 32px and
+  hero minimum height from 600px to 680px (at a 16px root), as intended.
+  Maintainer visual acceptance of this earlier desktop transition remains pending.
+- Existing README edits and settings whitespace preserved. Release remains
+  0.1.0; changes are uncommitted. No merge, push, tag, or dependency changes.
+
+### T11 finalization — 2026-11-01
+
+- Maintainer approved T11 for commit and integration into local master.
+- Preserved manual SCSS comment spacing and existing README edits. No functional
+  code changed since verification; successful build and focused checks retained
+  without repetition. T11 is DONE; release remains 0.1.0.
+- No push, tag, branch deletion, or dependency changes.

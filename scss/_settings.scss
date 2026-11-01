@@ -1,9 +1,11 @@
 // =============================================================================
 // SETTINGS / CONTROL PANEL
 // =============================================================================
+
 @use "tools/rem" as *;
 
 // Configure with @use "settings" with (...) before loading other modules.
+
 // -----------------------------------------------------------------------------
 // PALETTE
 // -----------------------------------------------------------------------------
@@ -23,6 +25,7 @@ $color-focus: #286D96 !default;
 // -----------------------------------------------------------------------------
 // DARK PALETTE
 // -----------------------------------------------------------------------------
+
 $color-dark-text: #e5e9ef !default;
 $color-dark-background: #171c27 !default;
 $color-dark-surface: #232a35 !default;
@@ -38,6 +41,7 @@ $color-dark-focus: $color-dark-primary-hover !default;
 // -----------------------------------------------------------------------------
 // TYPOGRAPHY
 // -----------------------------------------------------------------------------
+
 $font-family: (system-ui, -apple-system, "Segoe UI", sans-serif) !default;
 $font-size: rem(16) !default;
 $line-height: 1.6 !default;
@@ -47,6 +51,7 @@ $heading-sizes: (1: rem(40), 2: rem(32), 3: rem(24), 4: rem(20), 5: rem(18), 6: 
 // -----------------------------------------------------------------------------
 // SPACING
 // -----------------------------------------------------------------------------
+
 $space-1: rem(4) !default;
 $space-2: rem(8) !default;
 $space-3: rem(16) !default;
@@ -57,16 +62,22 @@ $space-6: rem(48) !default;
 // -----------------------------------------------------------------------------
 // BREAKPOINTS
 // -----------------------------------------------------------------------------
+
+$breakpoint-small: rem(640) !default;
 $breakpoint-medium: rem(768) !default;
-$breakpoint-large: rem(1152) !default;
+$breakpoint-large: rem(1024) !default;
+$breakpoint-xlarge: rem(1280) !default;
 $breakpoints: (
-  medium: $breakpoint-medium,
-  large: $breakpoint-large
+  sm: $breakpoint-small,
+  md: $breakpoint-medium,
+  lg: $breakpoint-large,
+  xl: $breakpoint-xlarge
 ) !default;
 
 // -----------------------------------------------------------------------------
 // LAYOUT
 // -----------------------------------------------------------------------------
+
 $container-max: rem(1152) !default;
 $container-narrow: rem(704) !default;
 $container-padding: $space-3 !default;
@@ -80,4 +91,5 @@ $grid-gap-large: $space-4 !default;
 // -----------------------------------------------------------------------------
 // BUTTONS
 // -----------------------------------------------------------------------------
+
 $button-radius: rem(2) !default;

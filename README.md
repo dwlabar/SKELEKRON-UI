@@ -42,7 +42,7 @@ Open `index.html` to see the demo. Its artwork, animations, and `css/demo.css` a
 | Buttons | `.skel-button` with `.skel-button--primary`, `.skel-button--secondary`, or `.skel-button--outline`. |
 | Themes | Light and dark colors, automatically matched to the visitor's system preference. |
 
-Change desktop grid columns with `--skel-grid-columns`, spacing with `--skel-grid-gap`, or container width with `--skel-container-max`. Grids switch to multiple columns at `48rem`.
+Change desktop grid columns with `--skel-grid-columns`, spacing with `--skel-grid-gap`, or container width with `--skel-container-max`. Grids switch to multiple columns at `md` (`48rem` / 768px by default).
 
 ## Customize it
 
@@ -51,11 +51,10 @@ All the main settings live in `scss/_settings.scss`: colors, fonts, spacing, bre
 To rebuild the CSS after changing Sass:
 
 ```sh
-npm ci
 npm run build
 ```
 
-Use `npm run watch` while editing. Node.js and npm are only needed for Sass development; the compiled CSS is ready to use as-is.
+Use npm run watch to automatically rebuild as you work. The compiled CSS is ready to use without Node.js or npm.
 
 You can also configure SKELEKRON from your own Sass file:
 
@@ -68,6 +67,39 @@ You can also configure SKELEKRON from your own Sass file:
 ```
 
 Compile it with `npx sass --load-path=scss your-entry.scss your-output.css`. Configure settings before loading other SKELEKRON modules.
+
+### Responsive breakpoints
+
+| Name | Sass token | Default |
+| --- | --- | --- |
+| `sm` | `$breakpoint-small` | `40rem` (640px) |
+| `md` | `$breakpoint-medium` | `48rem` (768px) |
+| `lg` | `$breakpoint-large` | `64rem` (1024px) |
+| `xl` | `$breakpoint-xlarge` | `80rem` (1280px) |
+
+Pixel equivalents assume a 16px browser default font size. Breakpoints are
+configurable Sass values, not runtime CSS custom properties. Each token and the
+central `$breakpoints` map use `!default`; configure them before loading modules
+and rebuild the CSS. Individual token overrides flow into the default map.
+
+For example, in your own entry file:
+
+```scss
+@use "skelekron" with (
+  $breakpoint-large: 66rem
+);
+
+.project-panel {
+  @include skelekron.breakpoint(lg) {
+    padding: 2rem;
+  }
+}
+```
+
+Components should use only the breakpoints they need. Grid columns, section
+spacing, and the demo hero's split composition use `md`. Container padding and
+the taller demo hero use `lg`. The `sm` and `xl` sizes are available without
+adding extra transitions. The default container maximum remains `72rem` (1152px).
 
 ### Light and dark themes
 
