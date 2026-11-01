@@ -45,10 +45,10 @@
   Visually approved by the maintainer on 2026-11-01; release remains 0.1.0.
 
 T07 finalization includes the accumulated T04/T05 theme and hero work.
-- **T10 — Pre-release Audit & Polish: REVIEW.** Refined README/demo copy,
+- **T10 — Pre-release Audit & Polish: DONE.** Refined README/demo copy,
   separated demo Sass responsibilities, standardized subsection comments, and
-  reconciled documentation with the current implementation. Awaiting maintainer
-  review; changes remain uncommitted.
+  reconciled documentation with the current implementation. Verified present
+  in master; finalized on 2026-11-01. Release remains 0.1.0.
 
 - **T11 — Standardize Responsive Breakpoints: DONE.** Added configurable
   sm/md/lg/xl Sass breakpoints at 640/768/1024/1280px and updated component
@@ -62,7 +62,7 @@ T07 finalization includes the accumulated T04/T05 theme and hero work.
   Build passed; compiled CSS differs only by the redundant declarations.
   Toolkit theme unchanged; maintainer approved finalization on 2026-11-01.
 
-Next: **0.1.0 public release preparation**, after T10 review.
+Next: **0.1.0 release preparation**.
 T02 modal/lightbox remains an unstarted backlog feature.
 The dated verification notes below retain their original pre-finalization status.
 Release remains 0.1.0; no push, tag, or publication.
