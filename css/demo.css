@@ -12,9 +12,6 @@
     --demo-hero-background-image: radial-gradient(ellipse 40.625rem 34.375rem at calc(50% + min(12vw, 7.5rem)) 0,
       rgba(229, 233, 239, 0.07),
       transparent);
-    --demo-building-midtone: #cdcccd;
-    --demo-building-highlight: #fef9f1;
-    --demo-building-shadow: #425874;
   }
 }
 :root[data-skel-theme=dark] {
@@ -22,9 +19,6 @@
   --demo-hero-background-image: radial-gradient(ellipse 40.625rem 34.375rem at calc(50% + min(12vw, 7.5rem)) 0,
     rgba(229, 233, 239, 0.07),
     transparent);
-  --demo-building-midtone: #cdcccd;
-  --demo-building-highlight: #fef9f1;
-  --demo-building-shadow: #425874;
 }
 
 .demo-header {

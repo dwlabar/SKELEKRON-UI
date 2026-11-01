@@ -56,6 +56,12 @@ T07 finalization includes the accumulated T04/T05 theme and hero work.
   transition at 1024px; container maximum and approved styling preserved.
   Release remains 0.1.0; maintainer approved finalization on 2026-11-01.
 
+- **T12 — Demo Theme Cleanup: DONE.** Moved demo artwork theme declarations
+  into the hero partial and removed redundant dark-mode building colors.
+  System detection, explicit overrides, gradient, colors, and comments preserved.
+  Build passed; compiled CSS differs only by the redundant declarations.
+  Toolkit theme unchanged; maintainer approved finalization on 2026-11-01.
+
 Next: **0.1.0 public release preparation**, after T10 review.
 T02 modal/lightbox remains an unstarted backlog feature.
 The dated verification notes below retain their original pre-finalization status.
